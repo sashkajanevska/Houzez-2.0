@@ -9,6 +9,7 @@ html,
 body {
   margin: 0;
   height: 100%;
+  background-color: rgb(170, 214, 159);
 }
 
 a {
@@ -783,7 +784,7 @@ input[type="checkbox"]:checked + label::after {
   .header-inner {
     max-width: 970px;
   }
-  
+
   .header-desktop {
     width: 100%;
     padding: 0 15px;
@@ -796,5 +797,5 @@ input[type="checkbox"]:checked + label::after {
 
   .nav-link a::after {
     margin-left: 6px;
-  }  
+  }
 }
