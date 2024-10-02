@@ -9,39 +9,8 @@ import { useState } from "react";
 export default function MobileHeader({ openModalOverlay }) {
   const [activeMenu, setActiveMenu] = useState("");
 
-  const toggleNavMenu = () => {
-    const navBox = document.querySelector(".nav-box-mobile");
-    const activeNavItem = document.querySelector(".nav-item.active");
-
-    if (activeMenu === "") {
-      navBox.classList.toggle("active");
-      setActiveMenu("navMenu");
-
-      closeSubmenu();
-      if (activeNavItem) {
-        activeNavItem.classList.remove("active");
-        activeNavItem.style.height = "";
-      }
-    } else if (activeMenu === "navMenu") {
-      navBox.classList.toggle("active");
-      setActiveMenu("");
-    } else {
-      return;
-    }
-  };
-
-  const toggleUserMenu = () => {
-    const userToolsBox = document.querySelector(".user-tools-box");
-
-    if (activeMenu === "") {
-      userToolsBox.classList.toggle("active");
-      setActiveMenu("userMenu");
-    } else if (activeMenu === "userMenu") {
-      userToolsBox.classList.toggle("active");
-      setActiveMenu("");
-    } else {
-      return;
-    }
+  const toggleBodyOverflow = () => {
+    document.body.style.overflowY = activeMenu === "" ? "hidden" : "auto";
   };
 
   const closeSubmenu = () => {
@@ -50,6 +19,29 @@ export default function MobileHeader({ openModalOverlay }) {
     if (activeSubmenuItem) {
       activeSubmenuItem.classList.remove("active");
       activeSubmenuItem.style.height = "";
+    }
+  };
+
+  const toggleNavMenu = () => {
+    const navBox = document.querySelector(".nav-box-mobile");
+    const activeNavItem = document.querySelector(".nav-item.active");
+
+    if (activeMenu === "") {
+      navBox.classList.toggle("active");
+      setActiveMenu("navMenu");
+      toggleBodyOverflow();
+    } else if (activeMenu === "navMenu") {
+      navBox.classList.toggle("active");
+      setActiveMenu("");
+      toggleBodyOverflow();
+
+      closeSubmenu();
+      if (activeNavItem) {
+        activeNavItem.classList.remove("active");
+        activeNavItem.style.height = "";
+      }
+    } else {
+      return;
     }
   };
 
@@ -75,6 +67,22 @@ export default function MobileHeader({ openModalOverlay }) {
       navItem.style.height = `${menuHeight + navLinkHeight}px`;
     } else {
       navItem.style.height = "";
+    }
+  };
+
+  const toggleUserMenu = () => {
+    const userToolsBox = document.querySelector(".user-tools-box");
+
+    if (activeMenu === "") {
+      userToolsBox.classList.toggle("active");
+      setActiveMenu("userMenu");
+      toggleBodyOverflow();
+    } else if (activeMenu === "userMenu") {
+      userToolsBox.classList.toggle("active");
+      setActiveMenu("");
+      toggleBodyOverflow();
+    } else {
+      return;
     }
   };
 

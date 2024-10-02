@@ -8,11 +8,9 @@
 html,
 body {
   margin: 0;
-  height: 100%;
-  background-color: rgb(170, 214, 159);
 }
 
-a {
+.header a {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -57,7 +55,7 @@ a {
   flex-grow: 1;
 }
 
-nav {
+.header nav {
   display: flex;
   align-items: center;
   justify-content: end;
@@ -99,13 +97,13 @@ nav {
   right: 20px;
 }
 
-li {
+.header li {
   color: #2e3e49;
   border-bottom: 1px solid #e6e6e6;
 }
 
-li:hover,
-li:active {
+.header li:hover,
+.header li:active {
   background-color: #00aeff1a !important;
   color: #00aeff !important;
 }
@@ -251,12 +249,11 @@ li a > span {
 }
 
 .login-modal {
-  max-width: 430px;
-  height: 315px;
+  max-width: 446px;
+  height: fit-content;
   margin: 28px auto;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
   pointer-events: none;
   transform: translate(0, -50px);
   transition: transform 0.3s ease-out;
@@ -271,12 +268,15 @@ li a > span {
 .login-modal-inner {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 430px;
   font-family: "Work Sans", sans-serif;
   font-size: 15px;
   font-weight: 500;
   line-height: 24px;
   color: #2e3e49;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
 }
 
 .login-header {
@@ -311,12 +311,6 @@ li a > span {
   width: 100%;
 }
 
-.login-main form {
-  border: 1px solid #dce0e0;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
 .login-main form > div {
   width: 100%;
 }
@@ -327,15 +321,25 @@ li a > span {
   height: 42px;
   padding: 6px 12px 6px 42px;
   width: 100%;
-  outline: transparent;
+  outline: none;
+  border: 1px solid #dce0e0;
+  border-radius: 4px;
 }
 
 input::placeholder {
   color: #dce0e0;
 }
 
-.email {
-  border-bottom: 1px solid #dce0e0;
+.email input {
+  border-bottom: none !important;
+  height: 41px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.password input {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
 .email,
@@ -429,8 +433,9 @@ input[type="checkbox"]:checked + label::after {
 }
 
 .login-button,
-.reset-main button {
+.reset-main form > button {
   padding: 0 15px;
+  width: 100%;
   font-weight: 500;
   line-height: 40px;
   color: #fff;
@@ -440,23 +445,22 @@ input[type="checkbox"]:checked + label::after {
 }
 
 .login-button span,
-.reset-main button > span {
+.reset-main form > button > span {
   vertical-align: middle;
   margin-left: 10px;
 }
 
 .login-button span.inactive,
-.reset-main button > span.inactive {
+.reset-main form > button > span.inactive {
   display: none;
 }
 
 .reset-modal {
-  max-width: 500px;
-  height: 256px;
+  max-width: 516px;
+  height: fit-content;
   margin: 28px auto;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
   pointer-events: none;
   transform: translate(0, -50px);
   transition: transform 0.3s ease-out;
@@ -476,6 +480,9 @@ input[type="checkbox"]:checked + label::after {
   font-size: 15px;
   line-height: 24px;
   color: #222;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
 }
 
 .reset-header {
@@ -519,6 +526,26 @@ input[type="checkbox"]:checked + label::after {
   margin-bottom: 16px;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-inner {
+    max-width: 970px;
+  }
+
+  .header-desktop {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .nav-link a {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .nav-link a::after {
+    margin-left: 6px;
+  }
+}
+
 @media (max-width: 991px) {
   .header {
     height: 60px;
@@ -526,7 +553,7 @@ input[type="checkbox"]:checked + label::after {
   }
 
   .header-inner {
-    max-width: 992px;
+    max-width: 991px;
     margin: 0;
   }
 
@@ -663,7 +690,7 @@ input[type="checkbox"]:checked + label::after {
     opacity: 1 !important;
   }
 
-  li {
+  .header li {
     padding: 0;
   }
 
@@ -777,25 +804,5 @@ input[type="checkbox"]:checked + label::after {
 
   .listing-button:active {
     background-color: #3fc2ff;
-  }
-}
-
-@media (max-width: 1199px) {
-  .header-inner {
-    max-width: 970px;
-  }
-
-  .header-desktop {
-    width: 100%;
-    padding: 0 15px;
-  }
-
-  .nav-link a {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .nav-link a::after {
-    margin-left: 6px;
   }
 }

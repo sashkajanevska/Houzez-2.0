@@ -1,9 +1,12 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import checkEmailValidity from "../utils/checkEmailValidity";
+import checkPasswordValidity from "../utils/checkPasswordValidity";
 
 export default function LoginModal() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const checkboxInputRef = useRef();
+  const [inputType, setInputType] = useState("text");
 
   const closeLoginOverlay = () => {
     document.getElementById("login").classList.remove("active");
@@ -16,7 +19,7 @@ export default function LoginModal() {
     }, 300);
   };
 
-  const handlePasswordChange = () => {
+  const openResetOverlay = () => {
     closeLoginOverlay();
     document.getElementById("resetOverlay").classList.add("active");
     setTimeout(() => {
@@ -65,29 +68,64 @@ export default function LoginModal() {
           </div>
 
           <div className="login-main">
-            <form>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+
+                if (inputType === "email") {
+                  checkEmailValidity(emailInputRef);
+                }
+                checkPasswordValidity(passwordInputRef);
+
+                if (
+                  emailInputRef.current.checkValidity() &&
+                  passwordInputRef.current.checkValidity()
+                ) {
+                  loading();
+                }
+              }}
+            >
               <div className="email">
-                <input id="email" type="text" placeholder="Username or Email" ref={emailInputRef} />
+                <input
+                  type={inputType}
+                  placeholder="Username or Email"
+                  ref={emailInputRef}
+                  required
+                  onChange={() => {
+                    emailInputRef.current.setCustomValidity("");
+                    emailInputRef.current.value.includes("@")
+                      ? setInputType("email")
+                      : setInputType("text");
+                  }}
+                />
               </div>
               <div className="password">
-                <input id="password" type="password" placeholder="Password" ref={passwordInputRef} />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  ref={passwordInputRef}
+                  required
+                  onChange={() => {
+                    passwordInputRef.current.setCustomValidity("");
+                  }}
+                />
               </div>
-            </form>
 
-            <div className="login-tools">
-              <div className="save-button">
-                <input id="saveUser" type="checkbox" ref={checkboxInputRef} />
-                <label htmlFor="saveUser">Remember me</label>
+              <div className="login-tools">
+                <div className="save-button">
+                  <input id="saveUser" type="checkbox" ref={checkboxInputRef} />
+                  <label htmlFor="saveUser">Remember me</label>
+                </div>
+                <button type="button" onClick={openResetOverlay}>
+                  Lost your password?
+                </button>
               </div>
-              <button onClick={handlePasswordChange}>
-                Lost your password?
+
+              <button type="submit" className="login-button">
+                Login
+                <span className="loading loading-spinner loading-sm inactive"></span>
               </button>
-            </div>
-
-            <button className="login-button" onClick={loading}>
-              Login
-              <span className="loading loading-spinner loading-sm inactive"></span>
-            </button>
+            </form>
           </div>
         </div>
       </div>
