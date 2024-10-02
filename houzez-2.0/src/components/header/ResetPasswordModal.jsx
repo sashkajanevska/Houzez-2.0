@@ -1,13 +1,15 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import checkEmailValidity from "../utils/checkEmailValidity";
 
 export default function NewPasswordModal() {
-  const passwordInputRef = useRef();
+  const emailInputRef = useRef();
+  const [inputType, setInputType] = useState("text");
 
   const closeResetOverlay = () => {
     document.getElementById("reset").classList.remove("active");
     document.getElementById("resetOverlay").classList.remove("active");
     setTimeout(() => {
-      passwordInputRef.current.value = "";
+      emailInputRef.current.value = "";
       document.getElementById("loadingSpinner").classList.add("inactive");
     });
   };
@@ -57,24 +59,41 @@ export default function NewPasswordModal() {
               Please enter your username or email address. You will receive a
               link to create a new password via email.
             </p>
-            <form>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (inputType === "email") {
+                  checkEmailValidity(emailInputRef);
+                }
+
+                if (emailInputRef.current.checkValidity()) {
+                  loading();
+                }
+              }}
+            >
               <input
-                id="newPassword"
-                type="text"
+                type={inputType}
                 placeholder="Enter your username or email"
-                ref={passwordInputRef}
+                ref={emailInputRef}
+                required
+                onChange={() => {
+                  emailInputRef.current.setCustomValidity("");
+                  emailInputRef.current.value.includes("@")
+                    ? setInputType("email")
+                    : setInputType("text");
+                }}
               />
+              <button type="submit">
+                Get new password
+                <span
+                  id="loadingSpinner"
+                  className="loading loading-spinner loading-sm inactive"
+                ></span>
+              </button>
             </form>
-            <button onClick={loading}>
-              Get new password
-              <span
-                id="loadingSpinner"
-                className="loading loading-spinner loading-sm inactive"
-              ></span>
-            </button>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}

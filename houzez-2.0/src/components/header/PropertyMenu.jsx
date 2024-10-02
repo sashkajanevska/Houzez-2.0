@@ -5,35 +5,51 @@ const PropertyMenu = () => {
       style={{ transform: "scale(1)" }}
     >
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V1</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V1
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V2</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V2
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V3</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V3
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V4</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V4
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V5</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V5
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V6</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V6
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">SINGLE PROPERTY V7</a>
+        <a href="" className="new-feature">
+          SINGLE PROPERTY V7
+        </a>
       </li>
 
       <li>
-        <a href="" className="new-feature">PROPERTY LAYOUT FULL WIDTH</a>
+        <a href="" className="new-feature">
+          PROPERTY LAYOUT FULL WIDTH
+        </a>
       </li>
 
       <li>
@@ -69,11 +85,15 @@ const PropertyMenu = () => {
       </li>
 
       <li>
-        <a href="" className="new-feature">PROPERTY LAYOUT MINIMAL</a>
+        <a href="" className="new-feature">
+          PROPERTY LAYOUT MINIMAL
+        </a>
       </li>
 
       <li class="border-b-0">
-        <a href="" className="new-feature">PROPERTY LAYOUT BOXED</a>
+        <a href="" className="new-feature">
+          PROPERTY LAYOUT BOXED
+        </a>
       </li>
     </ul>
   );

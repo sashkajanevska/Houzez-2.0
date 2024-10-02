@@ -1,14 +1,14 @@
-import HomeMenu from "./header/HomeMenu";
-import ListingMenu from "./header/ListingMenu";
-import PropertyMenu from "./header/PropertyMenu";
-import PagesMenu from "./header/PagesMenu";
-import ElementorMenu from "./header/ElementorMenu";
-import SearchesMenu from "./header/SearchesMenu";
-import UserMenu from "./header/UserMenu";
-import MobileHeader from "./header/MobileHeader";
-import LoginModal from "./header/LoginModal";
-import NewPasswordModal from "./header/NewPasswordModal";
-import "../styles/Header.css";
+import HomeMenu from "./HomeMenu";
+import ListingMenu from "./ListingMenu";
+import PropertyMenu from "./PropertyMenu";
+import PagesMenu from "./PagesMenu";
+import ElementorMenu from "./ElementorMenu";
+import SearchesMenu from "./SearchesMenu";
+import UserMenu from "./UserMenu";
+import MobileHeader from "./MobileHeader";
+import LoginModal from "./LoginModal";
+import ResetPasswordModal from "./ResetPasswordModal";
+import "../../styles/Header.css";
 
 export default function Header() {
   const openModalOverlay = () => {
@@ -97,7 +97,7 @@ export default function Header() {
 
         <MobileHeader openModalOverlay={openModalOverlay} />
         <LoginModal />
-        <NewPasswordModal />
+        <ResetPasswordModal />
       </div>
     </header>
   );
