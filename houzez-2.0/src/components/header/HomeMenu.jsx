@@ -1,4 +1,4 @@
-import toggleSubmenu from "./toggleSubmenu";
+import toggleSubmenu from "../utils/toggleSubmenu";
 
 const HomeMenu = () => {
   return (
