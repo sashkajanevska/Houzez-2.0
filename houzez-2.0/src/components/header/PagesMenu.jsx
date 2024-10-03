@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import toggleSubmenu from "../utils/toggleSubmenu";
 
 const PagesMenu = () => {
@@ -108,9 +109,9 @@ const PagesMenu = () => {
       </li>
 
       <li>
-        <a href="" className="new-feature">
+        <Link to={"/contact"} className="new-feature">
           CONTACT
-        </a>
+        </Link>
       </li>
 
       <li>
@@ -120,9 +121,9 @@ const PagesMenu = () => {
       </li>
 
       <li>
-        <a href="" className="new-feature">
+        <Link to={"/about"} className="new-feature">
           ABOUT US
-        </a>
+        </Link>
       </li>
 
       <li class="relative group submenu-item">
