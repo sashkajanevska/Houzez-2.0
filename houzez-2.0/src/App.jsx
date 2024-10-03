@@ -1,13 +1,23 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./pages/Layout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import "./App.css";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
-      <Header />
-      <div style={{width: "100%", height: "200px"}}>HI!</div>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" replace={true} />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
