@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HomeMenu from "./HomeMenu";
 import ListingMenu from "./ListingMenu";
 import PropertyMenu from "./PropertyMenu";
@@ -22,9 +23,9 @@ export default function Header() {
         <div className="header-desktop">
           <div className="header-desktop-inner">
             <div className="logo">
-              <a href="">
+              <Link to={"/"}>
                 <img src="./images/header/logo-houzez-white.png" alt="logo" />
-              </a>
+              </Link>
             </div>
 
             <div className="nav-box">

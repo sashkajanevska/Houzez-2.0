@@ -1,6 +1,7 @@
-import "../../styles/Footer.css";
 import { useRef } from "react";
 import checkEmailValidity from "../utils/checkEmailValidity";
+import "../../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const emailInputRef = useRef();
@@ -21,7 +22,7 @@ export default function Footer() {
                 aesthetics are combined with tasteful simplicity.
               </p>
               <div>
-                <a href="">Read more</a>
+                <Link to={"/about"}>Read more</Link>
               </div>
             </div>
             <div className="contact">
@@ -34,7 +35,7 @@ export default function Footer() {
                 <li className="contact-email">email@email.com</li>
               </ul>
               <div>
-                <a href="">Contact us</a>
+                <Link to={"/contact"}>Contact us</Link>
               </div>
             </div>
             <div className="newsletter">
