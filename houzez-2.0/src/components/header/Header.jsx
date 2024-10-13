@@ -11,14 +11,14 @@ import LoginModal from "./LoginModal";
 import ResetPasswordModal from "./ResetPasswordModal";
 import "../../styles/Header.css";
 
-export default function Header() {
+export default function Header({ newClass }) {
   const openModalOverlay = () => {
     document.getElementById("loginOverlay").classList.add("active");
     document.getElementById("login").classList.add("active");
   };
 
   return (
-    <header className="header">
+    <header className={`header ${newClass}`}>
       <div className="header-inner">
         <div className="header-desktop">
           <div className="header-desktop-inner">
@@ -30,40 +30,40 @@ export default function Header() {
 
             <div className="nav-box">
               <nav>
-                <div class="dropdown dropdown-hover nav-item">
-                  <div class="nav-link">
+                <div className="dropdown dropdown-hover nav-item">
+                  <div className={`nav-link ${newClass}`}>
                     <a href="#">HOME</a>
                   </div>
                   <HomeMenu />
                 </div>
-                <div class="dropdown dropdown-hover nav-item">
-                  <div className="nav-link">
+                <div className="dropdown dropdown-hover nav-item">
+                  <div className={`nav-link ${newClass}`}>
                     <a href="#">LISTING</a>
                   </div>
                   <ListingMenu />
                 </div>
-                <div class="dropdown dropdown-hover nav-item">
-                  <div className="nav-link">
+                <div className="dropdown dropdown-hover nav-item">
+                  <div className={`nav-link ${newClass}`}>
                     <a href="#">PROPERTY</a>
                   </div>
                   <PropertyMenu />
                 </div>
-                <div class="dropdown dropdown-hover nav-item">
-                  <div className="nav-link">
+                <div className="dropdown dropdown-hover nav-item">
+                  <div className={`nav-link ${newClass}`}>
                     <a href="#">PAGES</a>
                   </div>
                   <PagesMenu />
                 </div>
-                <div class="dropdown dropdown-hover nav-item">
-                  <div className="nav-link">
+                <div className="dropdown dropdown-hover nav-item">
+                  <div className={`nav-link ${newClass}`}>
                     <a href="#" className="new">
                       ELEMENTOR
                     </a>
                   </div>
                   <ElementorMenu />
                 </div>
-                <div class="dropdown dropdown-hover nav-item">
-                  <div className="nav-link">
+                <div className="dropdown dropdown-hover nav-item">
+                  <div className={`nav-link ${newClass}`}>
                     <a href="#">SEARCHES</a>
                   </div>
                   <SearchesMenu />
@@ -72,7 +72,7 @@ export default function Header() {
             </div>
 
             <div className="buttons-box">
-              <div class="dropdown dropdown-hover dropdown-left user-item">
+              <div className="dropdown dropdown-hover dropdown-left user-item">
                 <div className="user-button">
                   <a
                     href=""
@@ -89,7 +89,7 @@ export default function Header() {
                 </div>
                 <UserMenu />
               </div>
-              <button className="listing-button">
+              <button className={`listing-button ${newClass}`}>
                 <a href="">CREATE A LISTING</a>
               </button>
             </div>
