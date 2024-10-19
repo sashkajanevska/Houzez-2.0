@@ -3,6 +3,11 @@ import HeroSection from "../components/home/HeroSection";
 import CarouselSection from "../components/home/CarouselSection";
 import WidgetsSection from "../components/home/WidgetsSection";
 import GridLayoutSection from "../components/home/GridLayoutSection";
+import FormSection from "../components/home/FormSection";
+import ContentTypesSection from "../components/home/ContentTypesSection";
+import AgentsSection from "../components/home/AgentsSection";
+import TestimonialsSection from "../components/home/TestimonialsSection";
+import PartnersSection from "../components/home/PartnersSection";
 import "../styles/HomePage.css";
 
 export default function HomePage() {
@@ -14,6 +19,11 @@ export default function HomePage() {
       <CarouselSection />
       <WidgetsSection />
       <GridLayoutSection />
+      <FormSection />
+      <ContentTypesSection />
+      <AgentsSection />
+      <TestimonialsSection />
+      <PartnersSection />
     </div>
     </>
   );

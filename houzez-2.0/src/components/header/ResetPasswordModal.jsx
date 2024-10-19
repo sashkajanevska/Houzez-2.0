@@ -40,7 +40,7 @@ export default function NewPasswordModal() {
             <button onClick={closeResetOverlay}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="14px"
                 height="14px"
                 viewBox="0 0 16 16"

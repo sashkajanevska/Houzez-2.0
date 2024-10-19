@@ -3,10 +3,10 @@ import toggleSubmenu from "../utils/toggleSubmenu";
 const ElementorMenu = () => {
   return (
     <ul
-      class="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
+      className="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
       style={{ transform: "scale(1)" }}
     >
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PROPERTIES CAROUSELES
           <svg
@@ -34,7 +34,7 @@ const ElementorMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">PROPERTIES CAROUSEL V1</a>
           </li>
@@ -47,13 +47,13 @@ const ElementorMenu = () => {
           <li>
             <a href="">PROPERTIES CAROUSEL V4</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PROPERTIES CAROUSEL V5</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PROPERTIES CARDS
           <svg
@@ -81,7 +81,7 @@ const ElementorMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">PROPERTIES CARD V1</a>
           </li>
@@ -97,7 +97,7 @@ const ElementorMenu = () => {
           <li>
             <a href="">PROPERTIES CARD V5</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PROPERTIES CARD V6</a>
           </li>
         </ul>
@@ -111,7 +111,7 @@ const ElementorMenu = () => {
         <a href="">TAXONOMY GRIDS</a>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           FORMS
           <svg
@@ -139,14 +139,14 @@ const ElementorMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">INQUIRY FORM</a>
           </li>
           <li>
             <a href="">CONTACT FORM</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">LEAD CAPITON FORM</a>
           </li>
         </ul>
@@ -168,7 +168,7 @@ const ElementorMenu = () => {
         <a href="">PROPERTIES SLIDER</a>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           TESTIMONIALS
           <svg
@@ -196,11 +196,11 @@ const ElementorMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">TESTIMONIALS V1</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">TESTIMONIALS V2</a>
           </li>
         </ul>
@@ -214,7 +214,7 @@ const ElementorMenu = () => {
         <a href="">TEAM</a>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           OTHERS
           <svg
@@ -242,7 +242,7 @@ const ElementorMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">PARTNERS</a>
           </li>
@@ -261,7 +261,7 @@ const ElementorMenu = () => {
           <li>
             <a href="">PROPERTY BY IDS</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PACKAGES</a>
           </li>
         </ul>

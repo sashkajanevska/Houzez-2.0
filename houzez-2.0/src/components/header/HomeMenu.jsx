@@ -3,7 +3,7 @@ import toggleSubmenu from "../utils/toggleSubmenu";
 const HomeMenu = () => {
   return (
     <ul
-      class="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
+      className="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
       style={{ transform: "scale(1)" }}
     >
       <li>
@@ -18,8 +18,8 @@ const HomeMenu = () => {
         </a>
       </li>
 
-      <li class="relative group submenu-item">
-        <a href="" class="justify-between">
+      <li className="relative group submenu-item">
+        <a href="" className="justify-between">
           MAPS
           <svg
             className="desktop-menu-button"
@@ -47,15 +47,15 @@ const HomeMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
-          <li class="border-b-0">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+          <li className="border-b-0">
             <a href="">WITH MAP</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
-        <a href="" class="justify-between">
+      <li className="relative group submenu-item">
+        <a href="" className="justify-between">
           PARALLAX
           <svg
             className="desktop-menu-button"
@@ -83,18 +83,18 @@ const HomeMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">PARALLAX STANDARD</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PARALLAX FULLSCREEN</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
-        <a href="" class="justify-between">
+      <li className="relative group submenu-item">
+        <a href="" className="justify-between">
           VIDEO
           <svg
             className="desktop-menu-button"
@@ -122,18 +122,18 @@ const HomeMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">VIDEO STANDARD</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">VIDEO FULLSCREEN</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
-        <a href="" class="justify-between">
+      <li className="relative group submenu-item">
+        <a href="" className="justify-between">
           SLIDERS
           <svg
             className="desktop-menu-button"
@@ -161,18 +161,18 @@ const HomeMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">SLIDER REVOLUTION</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PROPERTIES SLIDER</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
-        <a href="" class="justify-between">
+      <li className="relative group submenu-item">
+        <a href="" className="justify-between">
           SPLASH
           <svg
             className="desktop-menu-button"
@@ -200,14 +200,14 @@ const HomeMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">VIDEO FULLSCREEN</a>
           </li>
           <li>
             <a href="">SLIDER FULLSCREEN</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">IMAGE FULLSCREEN</a>
           </li>
         </ul>
