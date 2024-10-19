@@ -93,8 +93,8 @@ export default function MobileHeader({ openModalOverlay }) {
           <img src="./images/header/menu.svg" alt="menu" />
           <div className="nav-box-mobile">
             <nav>
-              <div class="dropdown nav-item">
-                <div class="nav-link">
+              <div className="dropdown nav-item">
+                <div className="nav-link">
                   <a>
                     HOME
                     <span onClick={(e) => toggleDropdownMenu(e)}>
@@ -107,7 +107,7 @@ export default function MobileHeader({ openModalOverlay }) {
                 </div>
                 <HomeMenu />
               </div>
-              <div class="dropdown nav-item">
+              <div className="dropdown nav-item">
                 <div className="nav-link">
                   <a>
                     LISTING
@@ -121,7 +121,7 @@ export default function MobileHeader({ openModalOverlay }) {
                 </div>
                 <ListingMenu />
               </div>
-              <div class="dropdown nav-item">
+              <div className="dropdown nav-item">
                 <div className="nav-link">
                   <a>
                     PROPERTY
@@ -135,7 +135,7 @@ export default function MobileHeader({ openModalOverlay }) {
                 </div>
                 <PropertyMenu />
               </div>
-              <div class="dropdown nav-item">
+              <div className="dropdown nav-item">
                 <div className="nav-link">
                   <a>
                     PAGES
@@ -149,7 +149,7 @@ export default function MobileHeader({ openModalOverlay }) {
                 </div>
                 <PagesMenu />
               </div>
-              <div class="dropdown nav-item">
+              <div className="dropdown nav-item">
                 <div className="nav-link">
                   <a>
                     ELEMENTOR
@@ -166,7 +166,7 @@ export default function MobileHeader({ openModalOverlay }) {
                 </div>
                 <ElementorMenu />
               </div>
-              <div class="dropdown nav-item">
+              <div className="dropdown nav-item">
                 <div className="nav-link">
                   <a>
                     SEARCHES
@@ -214,7 +214,7 @@ export default function MobileHeader({ openModalOverlay }) {
                   width="16px"
                   height="16px"
                   viewBox="0 0 192 192"
-                  xml:space="preserve"
+                  xmlSpace="preserve"
                   fill="none"
                 >
                   <path
