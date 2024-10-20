@@ -4,10 +4,10 @@ import toggleSubmenu from "../utils/toggleSubmenu";
 const PagesMenu = () => {
   return (
     <ul
-      class="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
+      className="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
       style={{ transform: "scale(1)" }}
     >
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           AGENT
           <div className="svg-wrapper">
@@ -40,7 +40,7 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">ALL AGENTS V1</a>
           </li>
@@ -53,13 +53,13 @@ const PagesMenu = () => {
           <li>
             <a href="">AGENT PROFILE V1</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">AGENT PROFILE V2</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           AGENCIES
           <div className="svg-wrapper">
@@ -92,7 +92,7 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">ALL AGENCIES V1</a>
           </li>
@@ -102,7 +102,7 @@ const PagesMenu = () => {
           <li>
             <a href="">AGENCY PROFILE V1</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">AGENCY PROFILE V2</a>
           </li>
         </ul>
@@ -126,7 +126,7 @@ const PagesMenu = () => {
         </Link>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PROPERTY STATUS
           <svg
@@ -154,17 +154,17 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">FOR RENT</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">FOR SALE</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PROPERTY TYPE
           <svg
@@ -192,20 +192,20 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">APARTMENT</a>
           </li>
           <li>
             <a href="">SINGLE FAMILY HOME</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">VILLA</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PROPERTY CITY
           <svg
@@ -233,17 +233,17 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">MIAMI</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">LOS ANGELES</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PROPERTY FEATURES
           <svg
@@ -271,7 +271,7 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">SWIMMING POOL</a>
           </li>
@@ -281,13 +281,13 @@ const PagesMenu = () => {
           <li>
             <a href="">GYM</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">LAUNDRY</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           BLOG
           <svg
@@ -315,11 +315,11 @@ const PagesMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">SIMPLE BLOG</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">MASONRY BLOG</a>
           </li>
         </ul>
@@ -329,7 +329,7 @@ const PagesMenu = () => {
         <a href="">TYPOGRAPHY</a>
       </li>
 
-      <li class="border-b-0">
+      <li className="border-b-0">
         <a href="">404 PAGE</a>
       </li>
     </ul>

@@ -1,10 +1,10 @@
 const UserMenu = () => {
   return (
     <ul
-      class="dropdown-content menu p-0 shadow bg-base-100 w-[250px] user-dropdown"
+      className="dropdown-content menu p-0 shadow bg-base-100 w-[250px] user-dropdown"
       style={{ transform: "scale(1)" }}
     >
-      <li class="border-b-0">
+      <li className="border-b-0">
         <a href="" className="dropdown-link">
           <div>
             <svg
@@ -12,7 +12,7 @@ const UserMenu = () => {
               width="16px"
               height="16px"
               viewBox="0 0 192 192"
-              xml:space="preserve"
+              xmlSpace="preserve"
               fill="none"
             >
               <path
