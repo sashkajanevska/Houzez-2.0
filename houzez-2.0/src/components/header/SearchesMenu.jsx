@@ -1,7 +1,7 @@
 const SearchesMenu = () => {
   return (
     <ul
-      class="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
+      className="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
       style={{ transform: "scale(1)" }}
     >
       <li>
@@ -52,7 +52,7 @@ const SearchesMenu = () => {
         </a>
       </li>
 
-      <li class="border-b-0">
+      <li className="border-b-0">
         <a href="">SEARCH WIDGET</a>
       </li>
     </ul>

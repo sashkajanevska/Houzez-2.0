@@ -3,10 +3,10 @@ import toggleSubmenu from "../utils/toggleSubmenu";
 const ListingMenu = () => {
   return (
     <ul
-      class="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
+      className="dropdown-content menu p-0 shadow bg-base-100 w-[250px]"
       style={{ transform: "scale(1)" }}
     >
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V1
           <div className="svg-wrapper">
@@ -39,7 +39,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">LISTING V1 — GRID</a>
           </li>
@@ -64,7 +64,7 @@ const ListingMenu = () => {
           <li>
             <a href="">LISTING V1 — LIST FULL WIDTH</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               LISTING V1 — WITH TABS
             </a>
@@ -72,7 +72,7 @@ const ListingMenu = () => {
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V2
           <div className="svg-wrapper">
@@ -105,7 +105,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">LISTING V2 — GRID</a>
           </li>
@@ -130,7 +130,7 @@ const ListingMenu = () => {
           <li>
             <a href="">LISTING V2 — LIST FULL WIDTH</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               LISTING V2 — WITH TABS
             </a>
@@ -138,7 +138,7 @@ const ListingMenu = () => {
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V3
           <div className="svg-wrapper">
@@ -171,7 +171,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">LISTING V3 — GRID</a>
           </li>
@@ -180,7 +180,7 @@ const ListingMenu = () => {
               LISTING V3 — GRID 2 COLS
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               LISTING V3 — GRID 3 COLS
             </a>
@@ -188,7 +188,7 @@ const ListingMenu = () => {
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V4
           <div className="svg-wrapper">
@@ -221,19 +221,19 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="" className="new-feature">
               LISTING V4 — LIST
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">LISTING V4 — GRID</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V5
           <div className="svg-wrapper">
@@ -266,7 +266,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="" className="new-feature">
               LISTING V5 — GRID
@@ -287,7 +287,7 @@ const ListingMenu = () => {
               LISTING V5 — LIST
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               LISTING V5 — LIST FULL WIDTH
             </a>
@@ -295,7 +295,7 @@ const ListingMenu = () => {
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V6
           <div className="svg-wrapper">
@@ -328,7 +328,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="" className="new-feature">
               LISTING V6 — GRID
@@ -339,7 +339,7 @@ const ListingMenu = () => {
               LISTING V6 — GRID 2 COLS
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               LISTING V6 — GRID 3 COLS
             </a>
@@ -347,7 +347,7 @@ const ListingMenu = () => {
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING V7
           <div className="svg-wrapper">
@@ -380,7 +380,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">LISTING V7 — GRID</a>
           </li>
@@ -393,13 +393,13 @@ const ListingMenu = () => {
           <li>
             <a href="">LISTING V7 — LIST</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">LISTING V7 — LIST FULL WIDTH</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           WITH CONTENT
           <div className="svg-wrapper">
@@ -432,7 +432,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="" className="new-feature">
               CONTENT ON TOP
@@ -448,7 +448,7 @@ const ListingMenu = () => {
               CONTENT AT BOTTOM
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               CONTENT AT BOTTOM FULL WIDTH
             </a>
@@ -456,7 +456,7 @@ const ListingMenu = () => {
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           ELEMENTOR
           <div className="svg-wrapper">
@@ -489,7 +489,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="" className="new-feature">
               WITH SIDEBAR
@@ -508,7 +508,7 @@ const ListingMenu = () => {
               WITH PROPERTY CITY TABS
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               WITH PROPERTY TYPE TABS
             </a>
@@ -522,7 +522,7 @@ const ListingMenu = () => {
         </a>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           HALF MAP
           <div className="svg-wrapper">
@@ -555,7 +555,7 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">HALF MAP — SIDE SEARCH</a>
           </li>
@@ -569,7 +569,7 @@ const ListingMenu = () => {
               HALF MAP — SEARCH V2
             </a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="" className="new-feature">
               HALF MAP — SEARCH V3
             </a>
@@ -581,7 +581,7 @@ const ListingMenu = () => {
         <a href="">LISTINGS PARALLAX</a>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           LISTING WITH MAP
           <svg
@@ -609,17 +609,17 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">LISTING WITH MAP</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">LISTING WITH MAP FULLSCREEN</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           PARALLAX BANNER
           <svg
@@ -647,17 +647,17 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">PARALLAX BANNER STANDARD</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PARALLAX BANNER FULLSCREEN</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group submenu-item">
+      <li className="relative group submenu-item">
         <a href="">
           VIDEO BANNER
           <svg
@@ -685,17 +685,17 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">VIDEO BANNER STANDARD</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">VIDEO BANNER FULLSCREEN</a>
           </li>
         </ul>
       </li>
 
-      <li class="relative group border-b-0 submenu-item">
+      <li className="relative group border-b-0 submenu-item">
         <a href="">
           SLIDERS
           <svg
@@ -723,11 +723,11 @@ const ListingMenu = () => {
             </svg>
           </span>
         </a>
-        <ul class="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
+        <ul className="absolute left-full top-0 hidden group-hover:block p-0 m-0 bg-base-100 shadow-lg w-[250px] submenu">
           <li>
             <a href="">SLIDER REVOLUTION</a>
           </li>
-          <li class="border-b-0">
+          <li className="border-b-0">
             <a href="">PROPERTIES SLIDER</a>
           </li>
         </ul>

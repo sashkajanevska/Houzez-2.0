@@ -8,5 +8,24 @@
 html,
 body {
   margin: 0;
-  height: 100%;
+  width: 100%;
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 12.5px;
+  border: 1px solid #00aeff;
+  background-color: #00aeff;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.scroll-to-top-button.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 10;
 }
