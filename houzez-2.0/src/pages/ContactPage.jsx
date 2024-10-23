@@ -1,13 +1,17 @@
 import Header from "../components/header/Header";
+import TitleSection from "../components/contact/TitleSection";
+import ContactInfoSection from "../components/contact/ContactInfoSection";
+import MapSection from "../components/contact/MapSection";
+import "../styles/ContactPage.css";
 
 export default function ContactPage() {
   return (
     <>
       <Header newClass={""} />
-      <div>
-        <div style={{ width: "100%", height: "200px" }}>
-          Welcome to the Contact Page!!
-        </div>
+      <div className="contact-page">
+        <TitleSection />
+        <ContactInfoSection />
+        <MapSection />
       </div>
     </>
   );

@@ -1,13 +1,20 @@
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import carouselItems from "../utils/carouselItems";
+import carouselItems from "../utils/CarouselItems";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 
 export default function CarouselSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
-    <section className="carousel-section">
+    <section className="carousel-section" data-aos="fade-zoom-in">
       <div className="carousel-container">
         <div className="carousel-text-content">
           <h2>Display Latest & Featured Properties</h2>

@@ -1,5 +1,7 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import checkFormValidity from "../utils/checkFormValidity";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function FormSection() {
   const inquiryTypeRef = useRef();
@@ -23,9 +25,7 @@ export default function FormSection() {
   ];
 
   const toggleLoadingSpinner = () => {
-    document
-      .querySelector(".submit-btn-box button span")
-      .classList.toggle("inactive");
+    document.getElementById("loading-spinner").classList.toggle("inactive");
   };
 
   const submitForm = () => {
@@ -53,6 +53,10 @@ export default function FormSection() {
     successBoxRef.current.classList.remove("active");
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
     <section className="form-section">
       <div className="form-top-shape">
@@ -62,7 +66,11 @@ export default function FormSection() {
       <div className="form-content">
         <div className="form-content-container">
           <div className="form-content-inner">
-            <div className="form-descr">
+            <div
+              className="form-descr"
+              data-aos="fade-zoom-in"
+              data-aos-delay="300"
+            >
               <h2>
                 Create Custom Capture Forms And Manage Leads With The Integrated
                 Houzez CRM
@@ -81,10 +89,12 @@ export default function FormSection() {
                 onSubmit={(e) => {
                   e.preventDefault();
                   checkFormValidity(
+                    nameInputRef,
+                    emailInputRef,
                     selectElements,
                     inputNumElements,
-                    nameInputRef,
-                    emailInputRef
+                    null,
+                    null
                   );
 
                   const errorBox = errorBoxRef.current;
@@ -231,7 +241,10 @@ export default function FormSection() {
                   <div className="submit-btn-box">
                     <button type="submit">
                       Submit
-                      <span className="loading loading-spinner loading-sm inactive"></span>
+                      <span
+                        id="loading-spinner"
+                        className="loading loading-spinner loading-sm inactive"
+                      ></span>
                     </button>
                   </div>
                 </div>

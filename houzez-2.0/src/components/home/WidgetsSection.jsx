@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function WidgetsSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <section className="widgets-section">
       <div className="widgets-top-shape">
@@ -7,7 +15,11 @@ export default function WidgetsSection() {
       <div className="widgets-overlay"></div>
       <div className="widgets-content">
         <div className="widgets-content-inner">
-          <div className="widgets-title">
+          <div
+            className="widgets-title"
+            data-aos="fade-zoom-in"
+            data-aos-delay="300"
+          >
             <h2>
               Houzez offers a wide range of drag-and-drop widgets to assist you
               in designing your pages
