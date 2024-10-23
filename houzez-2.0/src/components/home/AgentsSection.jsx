@@ -1,9 +1,21 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function AgentsSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
     <section className="agents-section">
       <div className="agents-content">
         <div className="agents-content-inner">
-          <div className="agents-text">
+          <div
+            className="agents-text"
+            data-aos="fade-zoom-in"
+            data-aos-delay="300"
+          >
             <h2>Meet Our Agents</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
           </div>

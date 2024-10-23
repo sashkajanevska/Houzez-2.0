@@ -1,6 +1,18 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function GridLayoutSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
-    <section className="grid-layout-section">
+    <section
+      className="grid-layout-section"
+      data-aos="fade-zoom-in"
+      data-aos-delay="300"
+    >
       <div className="grid-layout-content">
         <div className="grid-items-box">
           <div className="grid-text">

@@ -1,7 +1,8 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import scrollToTop from "../../components/utils/scrollToTop";
 import checkEmailValidity from "../utils/checkEmailValidity";
 import "../../styles/Footer.css";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   const emailInputRef = useRef();
@@ -22,7 +23,9 @@ export default function Footer() {
                 aesthetics are combined with tasteful simplicity.
               </p>
               <div>
-                <Link to={"/about"}>Read more</Link>
+                <Link to={"/about"} onClick={scrollToTop}>
+                  Read more
+                </Link>
               </div>
             </div>
             <div className="contact">
@@ -35,7 +38,9 @@ export default function Footer() {
                 <li className="contact-email">email@email.com</li>
               </ul>
               <div>
-                <Link to={"/contact"}>Contact us</Link>
+                <Link to={"/contact"} onClick={scrollToTop}>
+                  Contact us
+                </Link>
               </div>
             </div>
             <div className="newsletter">

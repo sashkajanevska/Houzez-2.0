@@ -1,6 +1,18 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function TestimonialsSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
-    <section className="testimonials-section">
+    <section
+      className="testimonials-section"
+      data-aos="fade-zoom-in"
+      data-aos-delay="300"
+    >
       <div className="testimonials-content">
         <div className="testimonials-content-inner">
           <div className="testimonials-title">
