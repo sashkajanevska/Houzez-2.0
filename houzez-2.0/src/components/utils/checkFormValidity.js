@@ -24,36 +24,26 @@ const checkNumInputValidity = (element) => {
   }
 };
 
-const checkTextInputValidity = (nameInputRef) => {
-  const label = document.querySelector(
-    `label[for="${nameInputRef.current.id}"]`
-  );
-  
-  if (
-    !nameInputRef.current.value ||
-    nameInputRef.current.value.match(/[0-9]/g)
-  ) {
-    nameInputRef.current.parentNode.classList.add("invalid");
+const checkTextInputValidity = (element) => {
+  const label = document.querySelector(`label[for="${element.current.id}"]`);
+
+  if (!element.current.value || element.current.value.match(/[0-9]/g)) {
+    element.current.parentNode.classList.add("invalid");
     label.classList.add("active");
   } else {
-    nameInputRef.current.parentNode.classList.remove("invalid");
+    element.current.parentNode.classList.remove("invalid");
     label.classList.remove("active");
   }
 };
 
 export default function formValidation(
+  nameInputRef,
+  emailInputRef,
   selectElements,
   numInputElements,
-  nameInputRef,
-  emailInputRef
+  lastNameInputRef,
+  messageInputRef
 ) {
-  selectElements.forEach((element) => {
-    checkOptionValidity(element);
-    element.current.addEventListener("change", () => {
-      checkOptionValidity(element);
-    });
-  });
-
   checkTextInputValidity(nameInputRef);
   nameInputRef.current.addEventListener("keyup", () => {
     checkTextInputValidity(nameInputRef);
@@ -64,10 +54,29 @@ export default function formValidation(
     checkEmailValidity(emailInputRef);
   });
 
-  numInputElements.forEach((element) => {
-    checkNumInputValidity(element);
-    element.current.addEventListener("keyup", () => {
-      checkNumInputValidity(element);
+  if (selectElements) {
+    selectElements.forEach((element) => {
+      checkOptionValidity(element);
+      element.current.addEventListener("change", () => {
+        checkOptionValidity(element);
+      });
     });
-  });
+
+    numInputElements.forEach((element) => {
+      checkNumInputValidity(element);
+      element.current.addEventListener("keyup", () => {
+        checkNumInputValidity(element);
+      });
+    });
+  } else {
+    checkTextInputValidity(lastNameInputRef);
+    lastNameInputRef.current.addEventListener("keyup", () => {
+      checkTextInputValidity(lastNameInputRef);
+    });
+
+    checkTextInputValidity(messageInputRef);
+    messageInputRef.current.addEventListener("keyup", () => {
+      checkTextInputValidity(messageInputRef);
+    });
+  }
 }

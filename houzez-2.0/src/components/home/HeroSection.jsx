@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState();
@@ -11,6 +13,10 @@ export default function HeroSection() {
 
   useEffect(() => {
     setCurrentSlide(0);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
   }, []);
 
   useEffect(() => {
@@ -43,7 +49,11 @@ export default function HeroSection() {
           ))}
         </div>
         <div className="hero-overlay"></div>
-        <div className="hero-text-content">
+        <div
+          className="hero-text-content"
+          data-aos="fade-zoom-in"
+          data-aos-delay="300"
+        >
           <div className="text-wrapper">
             <div>
               <h1>Welcome to Houzez 2.0</h1>
@@ -99,4 +109,4 @@ export default function HeroSection() {
       </div>
     </section>
   );
-};
+}
