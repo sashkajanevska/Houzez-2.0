@@ -1,9 +1,21 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function ContentTypesSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
     <section className="content-types-section">
       <div className="content-types-container">
         <div className="content-types-inner">
-          <div className="content-types-text">
+          <div
+            className="content-types-text"
+            data-aos="fade-zoom-in"
+            data-aos-delay="300"
+          >
             <div>
               <h2>Display Different Content Types</h2>
               <p>
