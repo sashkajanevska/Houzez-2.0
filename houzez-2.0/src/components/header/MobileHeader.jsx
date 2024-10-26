@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import HomeMenu from "./HomeMenu";
 import ListingMenu from "./ListingMenu";
 import PropertyMenu from "./PropertyMenu";
@@ -185,9 +186,9 @@ export default function MobileHeader({ openModalOverlay }) {
         </div>
 
         <div className="logo-mobile">
-          <a href="">
+          <Link to={"/"}>
             <img src="./images/header/logo-houzez-color.png" alt="logo" />
-          </a>
+          </Link>
         </div>
 
         <div className="user-toggle-button" onClick={toggleUserMenu}>
