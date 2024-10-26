@@ -580,7 +580,8 @@ input[type="checkbox"]:checked + label::after {
 }
 
 @media (max-width: 991px) {
-  .header {
+  .header,
+  .header.home {
     height: 60px;
     background-color: #fff;
   }
@@ -697,6 +698,10 @@ input[type="checkbox"]:checked + label::after {
   .nav-link a > span > img,
   .submenu-item a > span > svg {
     pointer-events: none;
+  }
+
+  .nav-link a > span {
+    pointer-events: all;
   }
 
   .nav-item .dropdown-content {
