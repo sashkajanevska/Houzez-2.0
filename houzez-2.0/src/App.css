@@ -29,3 +29,10 @@ body {
   pointer-events: all;
   z-index: 10;
 }
+
+@media (max-width: 767px) {
+  .scroll-to-top-button {
+    right: 15px;
+    bottom: 15px;
+  }
+}
