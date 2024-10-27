@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 
 export default function TeamSection() {
   useEffect(() => {
-    AOS.init({ duration: 750 });
+    AOS.init({ duration: 500 });
   }, []);
 
   return (

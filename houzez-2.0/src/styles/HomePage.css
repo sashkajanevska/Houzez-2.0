@@ -9,6 +9,7 @@
 html,
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .home-page {
@@ -1342,6 +1343,10 @@ input[type="number"] {
   background-color: #edf9ff;
 }
 
+.testimonials-title p {
+  font-size: 16px;
+}
+
 .testimonial-icon {
   width: 100%;
   margin-bottom: 10px;
@@ -1406,3 +1411,100 @@ input[type="number"] {
 }
 
 /*** PARTNERS SECTION END ***/
+/*
+/*
+/****************************/
+
+@media (max-width: 575px) {
+  .testimonial-content-inner {
+    padding: 15px 20px;
+  }
+
+  .testimonials-title {
+    padding: 60px 0 20px;
+  }
+
+  .testimonials-title h2 {
+    font-size: 28px;
+  }
+
+  .testimonials-wrap {
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+
+  .testimonial-box {
+    width: 100%;
+  }
+
+  .testimonial-text br {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .testimonials-content {
+    margin: 0 3%;
+  }
+
+  .testimonials-title {
+    padding: 70px 0 20px;
+  }
+
+  .testimonials-title h2 {
+    font-size: 32px;
+  }
+
+  .testimonials-wrap {
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
+
+  .testimonial-box {
+    width: 100%;
+  }
+
+  .testimonial-text br {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .testimonials-content {
+    margin: 0 3%;
+  }
+
+  .testimonials-title h2 {
+    font-size: 32px;
+  }
+
+  .testimonials-wrap {
+    flex-direction: column;
+  }
+
+  .testimonial-box {
+    width: 100%;
+  }
+
+  .testimonial-text br {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .testimonials-content {
+    margin: 0 3%;
+  }
+
+  .testimonials-wrap {
+    flex-direction: column;
+  }
+
+  .testimonial-box {
+    width: 100%;
+  }
+
+  .testimonial-text br {
+    display: none;
+  }
+}
