@@ -8,6 +8,7 @@
 html,
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .contact-page {
@@ -407,6 +408,10 @@ body {
   right: 0 !important;
 }
 
+.gm-style-mtc button {
+  font-size: 16px !important;
+}
+
 .gm-style-mtc-bbw ul,
 .gm-style-iw.gm-style-iw-c,
 .gm-style-iw-tc::after {
@@ -520,3 +525,128 @@ body {
 }
 
 /*** MAP SECTION END ***/
+/* 
+/*
+/***********************/
+
+@media (max-width: 767px) {
+  .title-container,
+  .contact-info-container,
+  .map-container {
+    margin: 0 3%;
+  }
+
+  .contact-info-inner {
+    flex-direction: column;
+    padding: 40px 0 20px;
+  }
+
+  .contact-form-wrapper,
+  .contact-info-wrapper {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .contact-form-inner {
+    padding: 50px 30px 32px;
+  }
+
+  .first-name-wrap,
+  .last-name-wrap {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .submit-button-wrap {
+    width: 60%;
+    margin: 0 auto 4px;
+  }
+
+  .social-contact-box {
+    background-color: #fff;
+    padding: 15px;
+  }
+
+  .map-section-inner {
+    padding: 10px 10px 60px;
+  }
+
+  .info-window-inner {
+    width: auto;
+    min-height: auto;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .location-info,
+  .location-gmaps-link {
+    width: 150px;
+  }
+
+  .location-info p,
+  .location-directions-link {
+    display: none;
+  }
+
+  .gmnoprint.gm-style-mtc-bbw {
+    flex-direction: column;
+  }
+
+  .gm-style-mtc button {
+    width: 100%;
+    font-size: 14px !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .title-container,
+  .contact-info-container,
+  .map-container {
+    margin: 0 5%;
+  }
+
+  .contact-info-inner {
+    flex-direction: column;
+    padding: 50px 0 30px;
+  }
+
+  .contact-form-wrapper,
+  .contact-info-wrapper {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .submit-button-wrap {
+    width: 50%;
+    margin: 0 auto 4px;
+  }
+
+  .social-contact-box {
+    background-color: #fff;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .title-container,
+  .contact-info-container,
+  .map-container {
+    margin: 0 3%;
+  }
+
+  .contact-form-wrapper {
+    width: 68%;
+    margin-right: 2%;
+  }
+
+  .contact-info-wrapper {
+    justify-content: space-between;
+  }
+
+  .inquiries-contact-box,
+  .location-contact-box,
+  .social-contact-box {
+    margin-bottom: 0;
+  }
+}

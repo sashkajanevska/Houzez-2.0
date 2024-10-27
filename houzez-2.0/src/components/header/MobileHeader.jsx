@@ -10,7 +10,9 @@ import SearchesMenu from "./SearchesMenu";
 export default function MobileHeader({ openModalOverlay }) {
   const [activeMenu, setActiveMenu] = useState("");
 
-  const toggleBodyOverflow = () => {
+  const toggleDocumentOverflow = () => {
+    document.documentElement.style.overflowY =
+      activeMenu === "" ? "hidden" : "auto";
     document.body.style.overflowY = activeMenu === "" ? "hidden" : "auto";
   };
 
@@ -30,11 +32,11 @@ export default function MobileHeader({ openModalOverlay }) {
     if (activeMenu === "") {
       navBox.classList.toggle("active");
       setActiveMenu("navMenu");
-      toggleBodyOverflow();
+      toggleDocumentOverflow();
     } else if (activeMenu === "navMenu") {
       navBox.classList.toggle("active");
       setActiveMenu("");
-      toggleBodyOverflow();
+      toggleDocumentOverflow();
 
       closeSubmenu();
       if (activeNavItem) {
@@ -77,11 +79,11 @@ export default function MobileHeader({ openModalOverlay }) {
     if (activeMenu === "") {
       userToolsBox.classList.toggle("active");
       setActiveMenu("userMenu");
-      toggleBodyOverflow();
+      toggleDocumentOverflow();
     } else if (activeMenu === "userMenu") {
       userToolsBox.classList.toggle("active");
       setActiveMenu("");
-      toggleBodyOverflow();
+      toggleDocumentOverflow();
     } else {
       return;
     }
