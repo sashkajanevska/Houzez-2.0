@@ -109,7 +109,7 @@ const PagesMenu = () => {
       </li>
 
       <li>
-        <Link to={"/contact"} className="new-feature">
+        <Link to={"/contact-us"} className="new-feature">
           CONTACT
         </Link>
       </li>
@@ -121,7 +121,7 @@ const PagesMenu = () => {
       </li>
 
       <li>
-        <Link to={"/about"} className="new-feature">
+        <Link to={"/about-us"} className="new-feature">
           ABOUT US
         </Link>
       </li>

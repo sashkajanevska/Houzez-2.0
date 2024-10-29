@@ -767,7 +767,7 @@ body {
   .team-title h2,
   .services-title h2,
   .blog-title h2 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .team-cards-box,
@@ -851,6 +851,12 @@ body {
   .services-container,
   .blog-container {
     margin: 0 3%;
+  }
+
+  .team-title h2,
+  .services-title h2,
+  .blog-title h2 {
+    font-size: 32px;
   }
 
   .content-hover-name,

@@ -4,6 +4,7 @@ import useWindowScroll from "../hooks/useWindowScroll";
 
 const Layout = () => {
   const [scroll, scrollTo] = useWindowScroll();
+
   return (
     <>
       <Outlet />

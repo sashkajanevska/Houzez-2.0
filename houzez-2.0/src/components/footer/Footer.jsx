@@ -23,7 +23,7 @@ export default function Footer() {
                 aesthetics are combined with tasteful simplicity.
               </p>
               <div>
-                <Link to={"/about"} onClick={scrollToTop}>
+                <Link to={"/about-us"} onClick={scrollToTop}>
                   Read more
                 </Link>
               </div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 <li className="contact-email">email@email.com</li>
               </ul>
               <div>
-                <Link to={"/contact"} onClick={scrollToTop}>
+                <Link to={"/contact-us"} onClick={scrollToTop}>
                   Contact us
                 </Link>
               </div>

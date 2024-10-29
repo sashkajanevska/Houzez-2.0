@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "../components/header/Header";
 import AboutTitleSection from "../components/about/AboutTitleSection";
 import IntroSection from "../components/about/IntroSection";
@@ -8,6 +9,10 @@ import TestimonialsSection from "../components/home/TestimonialsSection";
 import "../styles/AboutPage.css";
 
 export default function AboutPage() {
+  useEffect(() => {
+    document.title = "Houzez - About us";
+  }, []);
+
   return (
     <>
       <Header newClass={""} />
