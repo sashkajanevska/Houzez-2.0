@@ -103,7 +103,7 @@ body {
 }
 
 .nav-link a::after {
-  content: url("./images/header/arrow-down-desktop.svg");
+  content: url("../../images/header/arrow-down-desktop.svg");
   margin-left: 10px;
 }
 
@@ -382,11 +382,11 @@ input::placeholder {
 }
 
 .email::before {
-  background-image: url("./images/header/user.svg");
+  background-image: url("../../images/header/user.svg");
 }
 
 .password::before {
-  background-image: url("./images/header/lock.svg");
+  background-image: url("../../images/header/lock.svg");
   width: 18px;
   left: 17px;
 }
@@ -429,7 +429,7 @@ input::placeholder {
 }
 
 .save-button label::after {
-  content: url("./images/header/checked-mark.svg");
+  content: url("../../images/header/checked-mark.svg");
   width: 20px;
   height: 20px;
   border: 1px solid #00aeff;
