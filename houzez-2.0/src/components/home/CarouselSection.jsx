@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import useWindowSize from "../../hooks/useWindowSize";
 import carouselItems from "../utils/CarouselItems";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,6 +10,19 @@ import "swiper/css/pagination";
 import "swiper/css";
 
 export default function CarouselSection() {
+  const [slidesPerView, setSlidesPerView] = useState(4);
+  const { width } = useWindowSize();
+
+  useEffect(() => {
+    if (width < 576) {
+      setSlidesPerView(1);
+    } else if (width < 1200) {
+      setSlidesPerView(2);
+    } else {
+      setSlidesPerView(4);
+    }
+  }, [width]);
+
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -27,7 +41,7 @@ export default function CarouselSection() {
 
         <div className="carousel-wrapper">
           <Swiper
-            slidesPerView={4}
+            slidesPerView={slidesPerView}
             spaceBetween={30}
             loop={true}
             pagination={{

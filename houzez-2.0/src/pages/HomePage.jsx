@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "../components/header/Header";
 import HeroSection from "../components/home/HeroSection";
 import CarouselSection from "../components/home/CarouselSection";
@@ -11,6 +12,10 @@ import PartnersSection from "../components/home/PartnersSection";
 import "../styles/HomePage.css";
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = "Houzez - Real Estate Theme";
+  }, []);
+
   return (
     <>
     <Header newClass={"home"} />
