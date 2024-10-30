@@ -38,7 +38,7 @@ The most flexible WordPress theme for real estate. Crafted for versatility. Houz
 - **react-router-dom:**
   Lightweight, fully-featured routing library for React.
 
-### Bulld Tools
+### Build Tools
 
 - **Vite:**
   Local development server for fast and efficient web development.
