@@ -8,7 +8,7 @@ The most flexible WordPress theme for real estate. Crafted for versatility. Houz
 
 ### Active Pages
 
--  **Home Page**
+-  **Home**
 -  **About us**
 -  **Contact us**
 
@@ -60,7 +60,10 @@ https://fabulous-sprinkles-90fa21.netlify.app/
 
 &nbsp;&nbsp; **3.** **Install dependencies** --> (npm install)
 
-&nbsp;&nbsp; **4.** **Set up environment variables** --> (Create .env file in the root directory and add VITE_GOOGLE_MAPS_API_KEY variable. Generate Google Maps API Key by following the instructions in this [link](https://developers.google.com/maps/documentation/javascript/get-api-key). Copy the Google Maps API Key and use it as value for VITE_GOOGLE_MAPS_API_KEY variable.)
+&nbsp;&nbsp; **4.** **Set up environment variables** --> (
+    - Create .env file in the root directory and add VITE_GOOGLE_MAPS_API_KEY variable. 
+    - Generate Google Maps API Key by following the instructions in this [link](https://developers.google.com/maps/documentation/javascript/get-api-key). 
+    - Copy the Google Maps API Key and use it as value for VITE_GOOGLE_MAPS_API_KEY variable.)
 
 &nbsp;&nbsp; **5.** **Start the development server** --> (npm run dev)
 
