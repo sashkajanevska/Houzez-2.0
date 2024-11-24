@@ -58,9 +58,9 @@ https://fabulous-sprinkles-90fa21.netlify.app/
 
 &nbsp;&nbsp; **2.** **Navigate to the project directory** --> (cd houzez-2.0)
 
-&nbsp;&nbsp; **3.** **Install dependencies** --> (npm install)
+&nbsp;&nbsp; **3.** **Install the dependencies** --> (npm install)
 
-&nbsp;&nbsp; **4.** **Set up environment variables** --> (
+&nbsp;&nbsp; **4.** **Set up the environment variables** --> (
 - Create .env file in the root directory and add VITE_GOOGLE_MAPS_API_KEY variable. 
 - Generate Google Maps API Key by following the instructions in this [link](https://developers.google.com/maps/documentation/javascript/get-api-key). 
 - Copy the Google Maps API Key and use it as value for VITE_GOOGLE_MAPS_API_KEY variable.)
