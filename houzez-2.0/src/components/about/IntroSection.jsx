@@ -1,14 +1,16 @@
+import styles from "../../styles/about/IntroSection.module.css";
+
 export default function IntroSection() {
   return (
-    <section className="intro-section">
-      <div className="intro-container">
-        <div className="intro-section-inner">
-          <div className="intro-content-wrapper">
-            <div className="intro-content-title">
+    <section className={styles["intro-section"]}>
+      <div className={styles["intro-container"]}>
+        <div className={styles["intro-section-inner"]}>
+          <div className={styles["intro-content-wrapper"]}>
+            <div className={styles["intro-content-title"]}>
               <h2>Your Vision Unrestricted</h2>
             </div>
 
-            <div className="intro-content-text">
+            <div className={styles["intro-content-text"]}>
               <div>
                 <p>
                   <span>

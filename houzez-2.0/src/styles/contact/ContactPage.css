@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.contact-page {
+  width: 100%;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  color: #222;
+}
+
+/* MAP SECTION */
+/* react-google-maps library predefined classes */
+
+.gmnoprint.gm-style-mtc-bbw {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.gm-style-mtc button {
+  font-size: 16px !important;
+}
+
+.gm-style-mtc-bbw ul,
+.gm-style-iw.gm-style-iw-c,
+.gm-style-iw-tc::after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .gmnoprint.gm-style-mtc-bbw {
+    flex-direction: column;
+  }
+
+  .gm-style-mtc button {
+    width: 100%;
+    font-size: 14px !important;
+    border-radius: 0 !important;
+  }
+}

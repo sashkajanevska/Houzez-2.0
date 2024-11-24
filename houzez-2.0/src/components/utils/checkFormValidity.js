@@ -1,38 +1,38 @@
 import checkEmailValidity from "./checkEmailValidity";
 
-const checkOptionValidity = (element) => {
+const checkOptionValidity = (element, styles) => {
   const label = document.querySelector(`label[for="${element.current.id}"]`);
 
   if (!element.current.value) {
-    element.current.parentNode.classList.add("invalid");
-    label.classList.add("active");
+    element.current.parentNode.classList.add(styles.invalid);
+    label.classList.add(styles.active);
   } else {
-    element.current.parentNode.classList.remove("invalid");
-    label.classList.remove("active");
+    element.current.parentNode.classList.remove(styles.invalid);
+    label.classList.remove(styles.active);
   }
 };
 
-const checkNumInputValidity = (element) => {
+const checkNumInputValidity = (element, styles) => {
   const label = document.querySelector(`label[for="${element.current.id}"]`);
 
   if (!element.current.value || element.current.value < element.current.min) {
-    element.current.parentNode.classList.add("invalid");
-    label.classList.add("active");
+    element.current.parentNode.classList.add(styles.invalid);
+    label.classList.add(styles.active);
   } else {
-    element.current.parentNode.classList.remove("invalid");
-    label.classList.remove("active");
+    element.current.parentNode.classList.remove(styles.invalid);
+    label.classList.remove(styles.active);
   }
 };
 
-const checkTextInputValidity = (element) => {
+const checkTextInputValidity = (element, styles) => {
   const label = document.querySelector(`label[for="${element.current.id}"]`);
 
   if (!element.current.value || element.current.value.match(/[0-9]/g)) {
-    element.current.parentNode.classList.add("invalid");
-    label.classList.add("active");
+    element.current.parentNode.classList.add(styles.invalid);
+    label.classList.add(styles.active);
   } else {
-    element.current.parentNode.classList.remove("invalid");
-    label.classList.remove("active");
+    element.current.parentNode.classList.remove(styles.invalid);
+    label.classList.remove(styles.active);
   }
 };
 
@@ -42,41 +42,42 @@ export default function formValidation(
   selectElements,
   numInputElements,
   lastNameInputRef,
-  messageInputRef
+  messageInputRef,
+  styles
 ) {
-  checkTextInputValidity(nameInputRef);
+  checkTextInputValidity(nameInputRef, styles);
   nameInputRef.current.addEventListener("keyup", () => {
-    checkTextInputValidity(nameInputRef);
+    checkTextInputValidity(nameInputRef, styles);
   });
 
-  checkEmailValidity(emailInputRef);
+  checkEmailValidity(emailInputRef, styles);
   emailInputRef.current.addEventListener("keyup", () => {
-    checkEmailValidity(emailInputRef);
+    checkEmailValidity(emailInputRef, styles);
   });
 
   if (selectElements) {
     selectElements.forEach((element) => {
-      checkOptionValidity(element);
+      checkOptionValidity(element, styles);
       element.current.addEventListener("change", () => {
-        checkOptionValidity(element);
+        checkOptionValidity(element, styles);
       });
     });
 
     numInputElements.forEach((element) => {
-      checkNumInputValidity(element);
+      checkNumInputValidity(element, styles);
       element.current.addEventListener("keyup", () => {
-        checkNumInputValidity(element);
+        checkNumInputValidity(element, styles);
       });
     });
   } else {
-    checkTextInputValidity(lastNameInputRef);
+    checkTextInputValidity(lastNameInputRef, styles);
     lastNameInputRef.current.addEventListener("keyup", () => {
-      checkTextInputValidity(lastNameInputRef);
+      checkTextInputValidity(lastNameInputRef, styles);
     });
 
-    checkTextInputValidity(messageInputRef);
+    checkTextInputValidity(messageInputRef, styles);
     messageInputRef.current.addEventListener("keyup", () => {
-      checkTextInputValidity(messageInputRef);
+      checkTextInputValidity(messageInputRef, styles);
     });
   }
 }

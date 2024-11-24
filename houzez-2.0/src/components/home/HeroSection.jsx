@@ -1,15 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import data from "../../data/homePageData.json";
+import styles from "../../styles/home/HeroSection.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState();
   const slideInterval = useRef(null);
-  const slides = [
-    { id: 1, imgUrl: "../../images/home/miami-beach.jpg" },
-    { id: 2, imgUrl: "../../images/home/new-york.jpg" },
-    { id: 3, imgUrl: "../../images/home/chicago.jpg" },
-  ];
 
   useEffect(() => {
     setCurrentSlide(0);
@@ -21,7 +18,9 @@ export default function HeroSection() {
 
   useEffect(() => {
     slideInterval.current = setInterval(() => {
-      setCurrentSlide(currentSlide < slides.length - 1 ? currentSlide + 1 : 0);
+      setCurrentSlide(
+        currentSlide < data.hero.heroSlides.length - 1 ? currentSlide + 1 : 0
+      );
     }, 5000);
 
     return () => {
@@ -30,13 +29,15 @@ export default function HeroSection() {
   }, [currentSlide]);
 
   return (
-    <section className="hero-section">
-      <div className="hero-section-top">
-        <div className="hero-slideshow">
-          {slides.map((slide, index) => (
+    <section className={styles["hero-section"]}>
+      <div className={styles["hero-section-top"]}>
+        <div className={styles["hero-slideshow"]}>
+          {data.hero.heroSlides.map((slide, index) => (
             <div
-              key={slide.id}
-              className={`hero-slide ${index === currentSlide ? "active" : ""}`}
+              key={index}
+              className={`${styles["hero-slide"]} ${
+                index === currentSlide ? styles["active"] : ""
+              }`}
             >
               <div
                 style={{
@@ -48,13 +49,13 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
-        <div className="hero-overlay"></div>
+        <div className={styles["hero-overlay"]}></div>
         <div
-          className="hero-text-content"
+          className={styles["hero-text-content"]}
           data-aos="fade-zoom-in"
           data-aos-delay="300"
         >
-          <div className="text-wrapper">
+          <div className={styles["text-wrapper"]}>
             <div>
               <h1>Welcome to Houzez 2.0</h1>
               <p>
@@ -67,43 +68,24 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="hero-section-bottom">
-        <div className="hero-cards">
-          <div className="hero-cards-wrapper">
-            <div className="hero-card">
-              <h2>Easy to get started</h2>
-              <p>
-                Get ready to launch your realty site in minutes without any
-                previous experience
-              </p>
-              <div className="card-link">
-                <a href="#">Learn more</a>
-              </div>
-            </div>
-            <div className="hero-card">
-              <h2>Highly customizable</h2>
-              <p>
-                Customize the site to your expectations by using all of the
-                theme features
-              </p>
-              <div className="card-link">
-                <a href="#">Learn more</a>
-              </div>
-            </div>
-            <div className="hero-card">
-              <h2>Drag-and-drop based</h2>
-              <p>
-                Design your page by simply dragging the features using Elementor
-                page builder
-              </p>
-              <div className="card-link">
-                <a href="#">Learn more</a>
-              </div>
-            </div>
+      <div className={styles["hero-section-bottom"]}>
+        <div className={styles["hero-cards"]}>
+          <div className={styles["hero-cards-wrapper"]}>
+            {data.hero.heroCards.map((card, index) => {
+              return (
+                <div key={index} className={styles["hero-card"]}>
+                  <h2>{card.title}</h2>
+                  <p>{card.text}</p>
+                  <div className={styles["card-link"]}>
+                    <a href="#">Learn more</a>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <div className="hero-bottom-shape">
+        <div className={styles["hero-bottom-shape"]}>
           <img src="../../../images/home/section-shape.svg" alt="shape" />
         </div>
       </div>

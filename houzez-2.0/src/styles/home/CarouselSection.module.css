@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.carousel-section {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.carousel-text-content {
+  width: 100%;
+  height: 172px;
+  padding: 40px 10px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-text-content h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #000;
+}
+
+.carousel-text-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #7a7a7a;
+  width: 850px;
+  margin-bottom: 16px;
+}
+
+.carousel-wrapper {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.slide-inner {
+  padding-bottom: 25px;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.slide-img::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.slide-img:hover::before {
+  opacity: 0;
+}
+
+.slide-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.label-left,
+.label-right {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 11px;
+  padding: 3px 5px;
+  background-color: #61ce70;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.label-right {
+  left: auto;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.65);
+  transition: color 0.2s;
+}
+
+.label-right:hover {
+  color: #00aeff;
+}
+
+.property-price {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  z-index: 2;
+}
+
+.property-price span {
+  font-weight: 300;
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.property-name {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.property-name h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #222;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.property-name h3:hover {
+  color: #00aeff;
+}
+
+.property-info,
+.property-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.property-bedrooms,
+.property-bathrooms,
+.property-area,
+.property-type {
+  display: flex;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.property-bedrooms img,
+.property-bathrooms img,
+.property-area img {
+  margin-right: 6px;
+}
+
+.property-bedrooms span,
+.property-bathrooms span,
+.property-area span {
+  margin-right: 12px;
+}
+
+.property-area span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.property-area .area {
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.property-type {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+  .carousel-container {
+    padding: 40px 20px 60px;
+  }
+
+  .carousel-text-content {
+    height: auto;
+  }
+
+  .carousel-text-content h2 {
+    font-size: 28px;
+  }
+
+  .carousel-text-content p {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .carousel-container {
+    padding: 40px 20px 90px;
+  }
+
+  .carousel-text-content {
+    height: auto;
+    width: 95%;
+    margin: auto;
+  }
+
+  .carousel-text-content h2 {
+    font-size: 30px;
+  }
+
+  .carousel-text-content p {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-container {
+    padding: 40px 20px 90px;
+  }
+
+  .carousel-text-content {
+    height: auto;
+    width: 95%;
+    margin: auto;
+  }
+
+  .carousel-text-content h2 {
+    font-size: 32px;
+  }
+
+  .carousel-text-content p {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-container {
+    padding: 40px 20px 90px;
+  }
+
+  .carousel-text-content {
+    height: auto;
+    width: 95%;
+    margin: auto;
+  }
+
+  .carousel-text-content h2 {
+    font-size: 32px;
+  }
+
+  .carousel-text-content p {
+    width: 100%;
+  }
+}

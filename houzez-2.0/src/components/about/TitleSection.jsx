@@ -1,4 +1,4 @@
-import styles from "../../styles/contact/TitleSection.module.css";
+import styles from "../../styles/about/TitleSection.module.css";
 
 export default function TitleSection() {
   return (
@@ -6,7 +6,7 @@ export default function TitleSection() {
       <div className={styles["title-overlay"]}></div>
       <div className={styles["title-container"]}>
         <div className={styles["title-inner"]}>
-          <h1>Contact us</h1>
+          <h1>About Us</h1>
         </div>
       </div>
     </section>

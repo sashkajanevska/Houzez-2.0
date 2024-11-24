@@ -1,0 +1,139 @@
+{
+    "hero": {
+        "heroSlides": [
+            {
+                "imgUrl": "../../images//home/miami-beach.jpg"
+            },
+            {
+                "imgUrl": "../../images//home/new-york.jpg"
+            },
+            {
+                "imgUrl": "../../images//home/chicago.jpg"
+            }
+        ],
+        "heroCards": [
+            {
+                "title": "Easy to get started",
+                "text": "Get ready to launch your realty site in minutes without any previous experience"
+            },
+            {
+                "title": "Highly customizable",
+                "text": "Customize the site to your expectations by using all of the theme features"
+            },
+            {
+                "title": "Drag-and-drop based",
+                "text": "Design your page by simply dragging the features using Elementor page builder"
+            }
+        ]
+    },
+    "carousel": {
+        "carouselCards": [
+            {
+                "name": "Modern apartment on the bay",
+                "propertyType": "apartment",
+                "imgUrl": "../../images/home/property-01.jpg",
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "propertyArea": 1200,
+                "price": "$4,500/mo",
+                "listingType": "rent"
+            },
+            {
+                "name": "Renovated studio",
+                "propertyType": "studio",
+                "imgUrl": "../../images/home/property-02.jpg",
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "propertyArea": 1200,
+                "price": "$540,000",
+                "listingType": "sale"
+            },
+            {
+                "name": "Penthouse apartment",
+                "propertyType": "apartment",
+                "imgUrl": "../../images/home/property-03.jpg",
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "propertyArea": 2560,
+                "price": "$876,000",
+                "listingType": "sale"
+            },
+            {
+                "name": "Modern apartment",
+                "propertyType": "apartment",
+                "imgUrl": "../../images/home/property-04.jpg",
+                "bedrooms": 1,
+                "bathrooms": 2,
+                "propertyArea": 1560,
+                "price": "$97,000",
+                "listingType": "sale"
+            },
+            {
+                "name": "Contemporary apartment",
+                "propertyType": "apartment",
+                "imgUrl": "../../images/home/property-05.jpg",
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "propertyArea": 1200,
+                "price": "$13,000/mo",
+                "listingType": "rent"
+            },
+            {
+                "name": "Awesome family home",
+                "propertyType": "studio",
+                "imgUrl": "../../images/home/property-06.jpg",
+                "bedrooms": 4,
+                "bathrooms": 2,
+                "propertyArea": 3400,
+                "price": "$570,000",
+                "listingType": "sale"
+            }
+        ]
+    },
+    "agents": {
+        "agentsCards": [
+            {
+                "imgUrl": "../../images/home/agent-1.jpg",
+                "name": "Samuel Palmer",
+                "role": "Company Agent, Modern House Real Estate"
+            },
+            {
+                "imgUrl": "../../images/home/agent-2.jpg",
+                "name": "Vincent Fuller",
+                "role": "Company Agent, Country House Real Estate"
+            },
+            {
+                "imgUrl": "../../images/home/agent-3.jpg",
+                "name": "Brittany Watkins",
+                "role": "Company Agent, All American Real Estate"
+            },
+            {
+                "imgUrl": "../../images/home/agent-4.jpg",
+                "name": "Michelle Ramirez",
+                "role": "Company Agent, Modern House Real Estate"
+            }
+        ]
+    },
+    "testimonials": {
+        "testimonialsCards": [
+            {
+                "content": "Really good Theme. We can't understand how we've been living without Houzez.",
+                "imgUrl": "../../images/home/review-01.jpg",
+                "name": "Roy Bennett",
+                "role": "Marketing Manager, Envato"
+            },
+            {
+                "content": "Great work on your Houzez. I like it more and more each day because it makes my life easier and lot profitable.",
+                "imgUrl": "../../images/home/review-02.jpg",
+                "name": "Kenneth Sandoval",
+                "role": "Realtor, Envato"
+            },
+            {
+                "content": "Houzez is the next killer theme. I strongly recommend Houzez to everyone interested in running a successful online business!",
+                "imgUrl": "../../images/home/review-03.jpg",
+                "name": "Kathleen Peterson",
+                "role": "Sales Manager, Envato"
+            }
+        ]
+    }
+}

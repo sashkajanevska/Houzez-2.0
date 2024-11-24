@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import data from "../../data/homePageData.json";
+import styles from "../../styles/home/AgentsSection.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -8,11 +10,11 @@ export default function AgentsSection() {
   }, []);
 
   return (
-    <section className="agents-section">
-      <div className="agents-content">
-        <div className="agents-content-inner">
+    <section className={styles["agents-section"]}>
+      <div className={styles["agents-content"]}>
+        <div className={styles["agents-content-inner"]}>
           <div
-            className="agents-text"
+            className={styles["agents-text"]}
             data-aos="fade-zoom-in"
             data-aos-delay="300"
           >
@@ -20,90 +22,31 @@ export default function AgentsSection() {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
           </div>
 
-          <div className="agents-wrapper">
-            <div className="agent-item">
-              <div className="agent-img-box">
-                <a href="#">
-                  <img src="../../../images/home/agent-1.jpg" alt="agentImg" />
-                </a>
-              </div>
-              <div className="agent-info">
-                <h3>
-                  <a href="#">Samuel Palmer</a>
-                </h3>
-                <div>Company Agent, Modern House Real Estate</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium quo nam veritatis ipsam, deleniti ut atque...
-                </p>
-              </div>
-              <div className="agent-link">
-                <a href="#">View Profile</a>
-              </div>
-            </div>
-
-            <div className="agent-item">
-              <div className="agent-img-box">
-                <a href="#">
-                  <img src="../../../images/home/agent-2.jpg" alt="agentImg" />
-                </a>
-              </div>
-              <div className="agent-info">
-                <h3>
-                  <a href="#">Vincent Fuller</a>
-                </h3>
-                <div>Company Agent, Country House Real Estate</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium quo nam veritatis ipsam, deleniti ut atque...
-                </p>
-              </div>
-              <div className="agent-link">
-                <a href="#">View Profile</a>
-              </div>
-            </div>
-
-            <div className="agent-item">
-              <div className="agent-img-box">
-                <a href="#">
-                  <img src="../../../images/home/agent-3.jpg" alt="agentImg" />
-                </a>
-              </div>
-              <div className="agent-info">
-                <h3>
-                  <a href="#">Brittany Watkins</a>
-                </h3>
-                <div>Company Agent, All American Real Estate</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium quo nam veritatis ipsam, deleniti ut atque...
-                </p>
-              </div>
-              <div className="agent-link">
-                <a href="#">View Profile</a>
-              </div>
-            </div>
-
-            <div className="agent-item">
-              <div className="agent-img-box">
-                <a href="#">
-                  <img src="../../../images/home/agent-4.jpg" alt="agentImg" />
-                </a>
-              </div>
-              <div className="agent-info">
-                <h3>
-                  <a href="#">Michelle Ramirez</a>
-                </h3>
-                <div>Company Agent, Modern House Real Estate</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium quo nam veritatis ipsam, deleniti ut atque...
-                </p>
-              </div>
-              <div className="agent-link">
-                <a href="#">View Profile</a>
-              </div>
-            </div>
+          <div className={styles["agents-wrapper"]}>
+            {data.agents.agentsCards.map((agent, index) => {
+              return (
+                <div key={index} className={styles["agent-item"]}>
+                  <div className={styles["agent-img-box"]}>
+                    <a href="#">
+                      <img src={agent.imgUrl} alt="agentImg" />
+                    </a>
+                  </div>
+                  <div className={styles["agent-info"]}>
+                    <h3>
+                      <a href="#">{agent.name}</a>
+                    </h3>
+                    <div>{agent.role}</div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Accusantium quo nam veritatis ipsam, deleniti ut atque...
+                    </p>
+                  </div>
+                  <div className={styles["agent-link"]}>
+                    <a href="#">View Profile</a>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

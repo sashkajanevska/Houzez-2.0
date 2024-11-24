@@ -7,7 +7,7 @@ const defaultLocation = {
   lng: -80.189221,
 };
 
-export default function MapComponent() {
+export default function MapComponent({ styles }) {
   const [currentLocation, setCurrentLocation] = useState(defaultLocation);
   const [locationName, setLocationName] = useState("");
   const [locationAddress, setLocationAddress] = useState("");
@@ -45,7 +45,7 @@ export default function MapComponent() {
       setCurrentLocation(newLocation);
       fetchLocationData(newLocation.lat, newLocation.lng);
     } else {
-      console.error("e.detail.latLng is undefined");
+      console.error("No results found for this location");
     }
   };
 
@@ -63,17 +63,17 @@ export default function MapComponent() {
         onClick={handleMapClick}
       >
         <Marker position={currentLocation} />
-        <div className="info-window">
-          <div className="info-window-inner">
-            <div className="location-info">
+        <div className={styles["info-window"]}>
+          <div className={styles["info-window-inner"]}>
+            <div className={styles["location-info"]}>
               <h3>{locationName}</h3>
               <p>{locationAddress}</p>
             </div>
-            <div className="location-directions-link">
+            <div className={styles["location-directions-link"]}>
               <a
                 href={googleMapsDirectionsLink}
                 data-tip="Get directions"
-                className="tooltip tooltip-bottom"
+                className={`tooltip tooltip-bottom`}
                 target="_blank"
               >
                 <img
@@ -83,7 +83,7 @@ export default function MapComponent() {
                 <div>Directions</div>
               </a>
             </div>
-            <div className="location-gmaps-link">
+            <div className={styles["location-gmaps-link"]}>
               <a href={googleMapsLink} target="_blank">
                 View larger map
               </a>

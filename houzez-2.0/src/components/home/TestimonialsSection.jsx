@@ -1,90 +1,52 @@
 import { useEffect } from "react";
+import data from "../../data/homePageData.json";
+import styles from "../../styles/home/TestimonialsSection.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ about }) {
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
 
   return (
     <section
-      className="testimonials-section"
+      className={`${styles["testimonials-section"]} ${
+        about ? styles.about : ""
+      }`}
       data-aos="fade-zoom-in"
       data-aos-delay="300"
     >
-      <div className="testimonials-content">
-        <div className="testimonials-content-inner">
-          <div className="testimonials-title">
+      <div className={styles["testimonials-content"]}>
+        <div className={styles["testimonials-content-inner"]}>
+          <div className={styles["testimonials-title"]}>
             <h2>Testimonials</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
           </div>
 
-          <div className="testimonials-wrap">
-            <div className="testimonial-box">
-              <div className="testimonial-box-inner">
-                <div className="testimonial-icon">
-                  <img src="../../../images/home/quotes.svg" alt="quote" />
-                </div>
-                <div className="testimonial-text">
-                  <p>
-                    Really good Theme. We can't understand how we've been living
-                    without Houzez.
-                  </p>
-                  <br />
-                </div>
-                <div className="testimonial-info">
-                  <img src="../../../images/home/review-01.jpg" />
-                  <div>
-                    <h3>Roy Bennett</h3>
-                    <p>Marketing Manager, Envato</p>
+          <div className={styles["testimonials-wrap"]}>
+            {data.testimonials.testimonialsCards.map((testimonial, index) => {
+              return (
+                <div key={index} className={styles["testimonial-box"]}>
+                  <div className={styles["testimonial-box-inner"]}>
+                    <div className={styles["testimonial-icon"]}>
+                      <img src="../../../images/home/quotes.svg" alt="quote" />
+                    </div>
+                    <div className={styles["testimonial-text"]}>
+                      <p>{testimonial.content}</p>
+                      {index === 0 ? <br /> : null}
+                    </div>
+                    <div className={styles["testimonial-info"]}>
+                      <img src={testimonial.imgUrl} />
+                      <div>
+                        <h3>{testimonial.name}</h3>
+                        <p>{testimonial.role}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="testimonial-box">
-              <div className="testimonial-box-inner">
-                <div className="testimonial-icon">
-                  <img src="../../../images/home/quotes.svg" alt="quote" />
-                </div>
-                <div className="testimonial-text">
-                  <p>
-                    Great work on your Houzez. I like it more and more each day
-                    because it makes my life easier and lot profitable.
-                  </p>
-                </div>
-                <div className="testimonial-info">
-                  <img src="../../../images/home/review-02.jpg" />
-                  <div>
-                    <h3>Kenneth Sandoval</h3>
-                    <p>Realtor, Envato</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-box">
-              <div className="testimonial-box-inner">
-                <div className="testimonial-icon">
-                  <img src="../../../images/home/quotes.svg" alt="quote" />
-                </div>
-                <div className="testimonial-text">
-                  <p>
-                    Houzez is the next killer theme. I strongly recommend Houzez
-                    to everyone interested in running a successful online
-                    business!
-                  </p>
-                </div>
-                <div className="testimonial-info">
-                  <img src="../../../images/home/review-03.jpg" />
-                  <div>
-                    <h3>Kathleen Peterson</h3>
-                    <p>Sales Manager, Envato</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

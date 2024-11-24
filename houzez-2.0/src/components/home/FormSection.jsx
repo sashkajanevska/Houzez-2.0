@@ -1,12 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import checkFormValidity from "../utils/checkFormValidity";
+import styles from "../../styles/home/FormSection.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function FormSection() {
+  const [isActive, setIsActive] = useState(false);
   const inquiryTypeRef = useRef();
   const userTypeRef = useRef();
   const nameInputRef = useRef();
+  const lastNameInputRef = useRef();
   const emailInputRef = useRef();
   const propertyTypeRef = useRef();
   const priceInputRef = useRef();
@@ -24,15 +27,15 @@ export default function FormSection() {
     bathsNumInputRef,
   ];
 
-  const toggleLoadingSpinner = () => {
-    document.getElementById("loading-spinner").classList.toggle("inactive");
+  const toggleActiveState = () => {
+    setIsActive((prevState) => !prevState);
   };
 
   const submitForm = () => {
-    toggleLoadingSpinner();
+    toggleActiveState();
 
     setTimeout(() => {
-      toggleLoadingSpinner();
+      toggleActiveState();
       selectElements.forEach((element) => {
         element.current.value = "";
       });
@@ -43,14 +46,14 @@ export default function FormSection() {
 
       nameInputRef.current.value = "";
       emailInputRef.current.value = "";
-      document.getElementById("lastName").value = "";
+      lastNameInputRef.current.value = "";
 
-      successBoxRef.current.classList.add("active");
+      successBoxRef.current.classList.add(styles["active"]);
     }, 1500);
   };
 
   const closeSuccessMsg = () => {
-    successBoxRef.current.classList.remove("active");
+    successBoxRef.current.classList.remove(styles["active"]);
   };
 
   useEffect(() => {
@@ -58,16 +61,16 @@ export default function FormSection() {
   }, []);
 
   return (
-    <section className="form-section">
-      <div className="form-top-shape">
+    <section className={styles["form-section"]}>
+      <div className={styles["form-top-shape"]}>
         <img src="../../../images/home/section-shape.svg" alt="shape" />
       </div>
-      <div className="form-overlay"></div>
-      <div className="form-content">
-        <div className="form-content-container">
-          <div className="form-content-inner">
+      <div className={styles["form-overlay"]}></div>
+      <div className={styles["form-content"]}>
+        <div className={styles["form-content-container"]}>
+          <div className={styles["form-content-inner"]}>
             <div
-              className="form-descr"
+              className={styles["form-descr"]}
               data-aos="fade-zoom-in"
               data-aos-delay="300"
             >
@@ -83,7 +86,7 @@ export default function FormSection() {
               <div></div>
             </div>
 
-            <div className="form-container">
+            <div className={styles["form-container"]}>
               <form
                 noValidate={true}
                 onSubmit={(e) => {
@@ -94,17 +97,18 @@ export default function FormSection() {
                     selectElements,
                     inputNumElements,
                     null,
-                    null
+                    null,
+                    styles
                   );
 
                   const errorBox = errorBoxRef.current;
-                  if (!errorBox.querySelector("label.active")) {
+                  if (!errorBox.querySelector(`.${styles.active}`)) {
                     submitForm();
                   }
                 }}
               >
-                <div className="form-fields-wrapper">
-                  <div className="inquiry-type-box">
+                <div className={styles["form-fields-wrapper"]}>
+                  <div className={styles["inquiry-type-box"]}>
                     <label>Inquiry Type</label>
                     <select
                       name="inquiry-type"
@@ -122,7 +126,7 @@ export default function FormSection() {
                     </select>
                   </div>
 
-                  <div className="user-type-box">
+                  <div className={styles["user-type-box"]}>
                     <label>Your Information</label>
                     <select
                       name="user-type"
@@ -140,7 +144,7 @@ export default function FormSection() {
                     </select>
                   </div>
 
-                  <div className="first-name-box">
+                  <div className={styles["first-name-box"]}>
                     <input
                       type="text"
                       id="firstName"
@@ -150,16 +154,17 @@ export default function FormSection() {
                     />
                   </div>
 
-                  <div className="last-name-box">
+                  <div className={styles["last-name-box"]}>
                     <input
                       type="text"
                       id="lastName"
                       placeholder="Last Name"
                       title="* Last Name"
+                      ref={lastNameInputRef}
                     />
                   </div>
 
-                  <div className="email-box">
+                  <div className={styles["email-box"]}>
                     <input
                       type="email"
                       id="emailAddress"
@@ -169,7 +174,7 @@ export default function FormSection() {
                     />
                   </div>
 
-                  <div className="property-type-box">
+                  <div className={styles["property-type-box"]}>
                     <label>Property Details</label>
                     <select
                       name="property-type"
@@ -194,7 +199,7 @@ export default function FormSection() {
                     </select>
                   </div>
 
-                  <div className="price-box">
+                  <div className={styles["price-box"]}>
                     <input
                       type="number"
                       id="maxPrice"
@@ -205,7 +210,7 @@ export default function FormSection() {
                     />
                   </div>
 
-                  <div className="area-size-box">
+                  <div className={styles["area-size-box"]}>
                     <input
                       type="number"
                       id="areaSize"
@@ -216,7 +221,7 @@ export default function FormSection() {
                     />
                   </div>
 
-                  <div className="beds-num-box">
+                  <div className={styles["beds-num-box"]}>
                     <input
                       type="number"
                       id="bedsNum"
@@ -227,7 +232,7 @@ export default function FormSection() {
                     />
                   </div>
 
-                  <div className="baths-num-box">
+                  <div className={styles["baths-num-box"]}>
                     <input
                       type="number"
                       id="bathsNum"
@@ -238,18 +243,19 @@ export default function FormSection() {
                     />
                   </div>
 
-                  <div className="submit-btn-box">
+                  <div className={styles["submit-btn-box"]}>
                     <button type="submit">
                       Submit
                       <span
-                        id="loading-spinner"
-                        className="loading loading-spinner loading-sm inactive"
+                        className={`loading loading-spinner loading-sm ${
+                          !isActive ? styles["inactive"] : ""
+                        }`}
                       ></span>
                     </button>
                   </div>
                 </div>
 
-                <div className="success-msg" ref={successBoxRef}>
+                <div className={styles["success-msg"]} ref={successBoxRef}>
                   <div>
                     <p>Message sent successfully!</p>
                     <button type="button" onClick={closeSuccessMsg}>
@@ -269,7 +275,7 @@ export default function FormSection() {
                     </button>
                   </div>
                 </div>
-                <div className="error-msg" ref={errorBoxRef}>
+                <div className={styles["error-msg"]} ref={errorBoxRef}>
                   <label htmlFor="inquiryType">* Inquiry Type</label>
                   <label htmlFor="userType">* Your Information</label>
                   <label htmlFor="firstName">* First Name</label>
@@ -285,7 +291,7 @@ export default function FormSection() {
           </div>
         </div>
       </div>
-      <div className="form-bottom-shape">
+      <div className={styles["form-bottom-shape"]}>
         <img src="../../../images/home/section-shape.svg" alt="shape" />
       </div>
     </section>

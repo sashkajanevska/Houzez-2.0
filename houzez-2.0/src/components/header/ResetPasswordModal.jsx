@@ -1,21 +1,25 @@
 import { useRef, useState } from "react";
 import checkEmailValidity from "../utils/checkEmailValidity";
+import styles from "../../styles/header/ResetModal.module.css";
 
-export default function NewPasswordModal() {
-  const emailInputRef = useRef();
+export default function ResetPasswordModal({
+  isResetModalActive,
+  setIsResetModalActive,
+}) {
   const [inputType, setInputType] = useState("text");
+  const [isInactive, setIsInactive] = useState(true);
+  const emailInputRef = useRef();
 
   const closeResetOverlay = () => {
-    document.getElementById("reset").classList.remove("active");
-    document.getElementById("resetOverlay").classList.remove("active");
+    setIsResetModalActive(!isResetModalActive);
     setTimeout(() => {
       emailInputRef.current.value = "";
-      document.getElementById("loadingSpinner").classList.add("inactive");
+      setIsInactive(true);
     });
   };
 
   const loading = () => {
-    document.getElementById("loadingSpinner").classList.remove("inactive");
+    setIsInactive(!isInactive);
     setTimeout(() => {
       closeResetOverlay();
     }, 1500);
@@ -23,19 +27,19 @@ export default function NewPasswordModal() {
 
   return (
     <div
-      id="resetOverlay"
-      className="modal-overlay"
+      className={`${styles["modal-overlay"]} ${
+        isResetModalActive ? styles["active"] : ""
+      }`}
       onClick={closeResetOverlay}
     >
       <div
-        id="reset"
-        className="reset-modal"
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
+        className={`${styles["reset-modal"]} ${
+          isResetModalActive ? styles["active"] : ""
+        }`}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="reset-modal-inner">
-          <div className="reset-header">
+        <div className={styles["reset-modal-inner"]}>
+          <div className={styles["reset-header"]}>
             <h2>Reset Password</h2>
             <button onClick={closeResetOverlay}>
               <svg
@@ -54,7 +58,7 @@ export default function NewPasswordModal() {
             </button>
           </div>
 
-          <div className="reset-main">
+          <div className={styles["reset-main"]}>
             <p>
               Please enter your username or email address. You will receive a
               link to create a new password via email.
@@ -63,7 +67,7 @@ export default function NewPasswordModal() {
               onSubmit={(e) => {
                 e.preventDefault();
                 if (inputType === "email") {
-                  checkEmailValidity(emailInputRef);
+                  checkEmailValidity(emailInputRef, styles);
                 }
 
                 if (emailInputRef.current.checkValidity()) {
@@ -86,8 +90,9 @@ export default function NewPasswordModal() {
               <button type="submit">
                 Get new password
                 <span
-                  id="loadingSpinner"
-                  className="loading loading-spinner loading-sm inactive"
+                  className={`loading loading-spinner loading-sm ${
+                    isInactive ? styles["inactive"] : ""
+                  }`}
                 ></span>
               </button>
             </form>

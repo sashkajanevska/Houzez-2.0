@@ -1,4 +1,4 @@
-export default function checkEmailValidity(emailInputRef, submitForm) {
+export default function checkEmailValidity(emailInputRef, styles, submitForm) {
   const emailInput = emailInputRef.current.value;
   const emailField = emailInputRef.current;
   const atIndex = emailInput.indexOf("@");
@@ -29,12 +29,12 @@ export default function checkEmailValidity(emailInputRef, submitForm) {
       !emailDomain.includes(".") ||
       emailDomain.endsWith(".")
     ) {
-      emailField.parentNode.classList.add("invalid");
-      label.classList.add("active");
+      emailField.parentNode.classList.add(styles.invalid);
+      label.classList.add(styles.active);
       return;
     }
 
-    emailField.parentNode.classList.remove("invalid");
-    label.classList.remove("active");
+    emailField.parentNode.classList.remove(styles.invalid);
+    label.classList.remove(styles.active);
   }
 }

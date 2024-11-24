@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import useWindowSize from "../../hooks/useWindowSize";
-import carouselItems from "../utils/CarouselItems";
+import data from "../../data/homePageData.json";
+import styles from "../../styles/home/CarouselSection.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "swiper/css/navigation";
@@ -28,9 +29,9 @@ export default function CarouselSection() {
   }, []);
 
   return (
-    <section className="carousel-section" data-aos="fade-zoom-in">
-      <div className="carousel-container">
-        <div className="carousel-text-content">
+    <section className={styles["carousel-section"]} data-aos="fade-zoom-in">
+      <div className={styles["carousel-container"]}>
+        <div className={styles["carousel-text-content"]}>
           <h2>Display Latest & Featured Properties</h2>
           <p>
             With the features and filters provided with the Houzez widgets you
@@ -39,7 +40,7 @@ export default function CarouselSection() {
           </p>
         </div>
 
-        <div className="carousel-wrapper">
+        <div className={styles["carousel-wrapper"]}>
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
@@ -53,42 +54,46 @@ export default function CarouselSection() {
             }}
             modules={[Autoplay, Pagination, Navigation]}
           >
-            {carouselItems.map((item, index) => (
+            {data.carousel.carouselCards.map((card, index) => (
               <SwiperSlide key={index}>
-                <div className="slide-inner">
-                  <div className="slide-img">
-                    <img src={item.imgUrl} />
-                    <span className="label-left">FEATURED</span>
-                    <span className="label-right">{`FOR ${item.listingType.toUpperCase()}`}</span>
-                    <div className="property-price">
+                <div className={styles["slide-inner"]}>
+                  <div className={styles["slide-img"]}>
+                    <img src={card.imgUrl} />
+                    <span className={styles["label-left"]}>FEATURED</span>
+                    <span
+                      className={styles["label-right"]}
+                    >{`FOR ${card.listingType.toUpperCase()}`}</span>
+                    <div className={styles["property-price"]}>
                       {index === 0 ? <span>From </span> : <></>}
-                      {item.price}
+                      {card.price}
                     </div>
                   </div>
 
-                  <div className="slide-content">
-                    <div className="property-name">
+                  <div className={styles["slide-content"]}>
+                    <div className={styles["property-name"]}>
                       <h3>
-                        <a href="#">{item.name}</a>
+                        <a href="#">{card.name}</a>
                       </h3>
                     </div>
-                    <div className="property-info">
-                      <div className="property-bedrooms">
+                    <div className={styles["property-info"]}>
+                      <div className={styles["property-bedrooms"]}>
                         <img src="../../../images/home/bed-double.svg" />
-                        <span>{item.bedrooms}</span>
+                        <span>{card.bedrooms}</span>
                       </div>
-                      <div className="property-bathrooms">
+                      <div className={styles["property-bathrooms"]}>
                         <img src="../../../images/home/shower.svg" />
-                        <span>{item.bathrooms}</span>
+                        <span>{card.bathrooms}</span>
                       </div>
-                      <div className="property-area">
+                      <div className={styles["property-area"]}>
                         <img src="../../../images/home/ruler.svg" />
-                        <span className="area">{item.propertyArea}</span>
+                        <span className={styles["area"]}>
+                          {card.propertyArea}
+                        </span>
                         <span>Sq Ft</span>
                       </div>
                     </div>
-                    <div className="property-type">
-                      <span>{item.propertyType.toUpperCase()}</span>
+                    <div className={styles["property-type"]}>
+                      <span>{card.propertyType.toUpperCase()}</span>
                     </div>
                   </div>
                 </div>

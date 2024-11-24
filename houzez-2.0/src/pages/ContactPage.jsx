@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 import TitleSection from "../components/contact/TitleSection";
 import ContactInfoSection from "../components/contact/ContactInfoSection";
 import MapSection from "../components/contact/MapSection";
-import "../styles/ContactPage.css";
+import "../styles/contact/ContactPage.css";
 
 export default function ContactPage() {
   useEffect(() => {

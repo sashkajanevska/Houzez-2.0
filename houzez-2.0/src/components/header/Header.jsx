@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import HomeMenu from "./HomeMenu";
 import ListingMenu from "./ListingMenu";
@@ -9,12 +10,14 @@ import UserMenu from "./UserMenu";
 import MobileHeader from "./MobileHeader";
 import LoginModal from "./LoginModal";
 import ResetPasswordModal from "./ResetPasswordModal";
-import "../../styles/Header.css";
+import "../../styles/header/Header.css";
 
 export default function Header({ newClass }) {
-  const openModalOverlay = () => {
-    document.getElementById("loginOverlay").classList.add("active");
-    document.getElementById("login").classList.add("active");
+  const [isLoginModalActive, setIsLoginModalActive] = useState(false);
+  const [isResetModalActive, setIsResetModalActive] = useState(false);
+
+  const openLoginOverlay = () => {
+    setIsLoginModalActive(!isLoginModalActive);
   };
 
   return (
@@ -78,7 +81,7 @@ export default function Header({ newClass }) {
                     href=""
                     onClick={(e) => {
                       e.preventDefault();
-                      openModalOverlay();
+                      openLoginOverlay();
                     }}
                   >
                     <img
@@ -96,9 +99,17 @@ export default function Header({ newClass }) {
           </div>
         </div>
 
-        <MobileHeader openModalOverlay={openModalOverlay} />
-        <LoginModal />
-        <ResetPasswordModal />
+        <MobileHeader openLoginOverlay={openLoginOverlay} />
+        <LoginModal
+          isLoginModalActive={isLoginModalActive}
+          setIsLoginModalActive={setIsLoginModalActive}
+          isResetModalActive={isResetModalActive}
+          setIsResetModalActive={setIsResetModalActive}
+        />
+        <ResetPasswordModal
+          isResetModalActive={isResetModalActive}
+          setIsResetModalActive={setIsResetModalActive}
+        />
       </div>
     </header>
   );

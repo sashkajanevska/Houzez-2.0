@@ -9,7 +9,7 @@ import ContentTypesSection from "../components/home/ContentTypesSection";
 import AgentsSection from "../components/home/AgentsSection";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import PartnersSection from "../components/home/PartnersSection";
-import "../styles/HomePage.css";
+import "../styles/home/HomePage.css";
 
 export default function HomePage() {
   useEffect(() => {

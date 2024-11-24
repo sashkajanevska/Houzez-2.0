@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import checkFormValidity from "../utils/checkFormValidity";
+import styles from "../../styles/contact/ContactInfoSection.module.css";
 
 export default function ContactInfoSection() {
+  const [isActive, setIsActive] = useState(false);
   const nameInputRef = useRef();
   const lastNameInputRef = useRef();
   const emailInputRef = useRef();
@@ -9,36 +11,36 @@ export default function ContactInfoSection() {
   const errorBoxRef = useRef();
   const successBoxRef = useRef();
 
-  const toggleLoadingSpinner = () => {
-    document.getElementById("loading-spinner").classList.toggle("inactive");
+  const toggleActiveState = () => {
+    setIsActive((prevState) => !prevState);
   };
 
   const submitForm = () => {
-    toggleLoadingSpinner();
+    toggleActiveState();
 
     setTimeout(() => {
-      toggleLoadingSpinner();
+      toggleActiveState();
 
       nameInputRef.current.value = "";
       lastNameInputRef.current.value = "";
       emailInputRef.current.value = "";
       messageInputRef.current.value = "";
 
-      successBoxRef.current.classList.add("active");
+      successBoxRef.current.classList.add(styles["active"]);
     }, 1500);
   };
 
   const closeSuccessMsg = () => {
-    successBoxRef.current.classList.remove("active");
+    successBoxRef.current.classList.remove(styles["active"]);
   };
 
   return (
-    <section className="contact-info-section">
-      <div className="contact-info-container">
-        <div className="contact-info-inner">
-          <div className="contact-form-wrapper">
-            <div className="contact-form-inner">
-              <div className="contact-form-intro">
+    <section className={styles["contact-info-section"]}>
+      <div className={styles["contact-info-container"]}>
+        <div className={styles["contact-info-inner"]}>
+          <div className={styles["contact-form-wrapper"]}>
+            <div className={styles["contact-form-inner"]}>
+              <div className={styles["contact-form-intro"]}>
                 <p>
                   Design your custom contact forms with this Houzez Elementor
                   custom widget and connect your leads with the integrated
@@ -46,7 +48,7 @@ export default function ContactInfoSection() {
                 </p>
               </div>
 
-              <div className="contact-form-box">
+              <div className={styles["contact-form-box"]}>
                 <form
                   noValidate={true}
                   onSubmit={(e) => {
@@ -57,17 +59,18 @@ export default function ContactInfoSection() {
                       null,
                       null,
                       lastNameInputRef,
-                      messageInputRef
+                      messageInputRef,
+                      styles
                     );
 
                     const errorBox = errorBoxRef.current;
-                    if (!errorBox.querySelector("label.active")) {
+                    if (!errorBox.querySelector(`.${styles.active}`)) {
                       submitForm();
                     }
                   }}
                 >
-                  <div className="contact-form-content">
-                    <div className="first-name-wrap">
+                  <div className={styles["contact-form-content"]}>
+                    <div className={styles["first-name-wrap"]}>
                       <label>First Name</label>
                       <input
                         type="text"
@@ -77,7 +80,7 @@ export default function ContactInfoSection() {
                         ref={nameInputRef}
                       />
                     </div>
-                    <div className="last-name-wrap">
+                    <div className={styles["last-name-wrap"]}>
                       <label>Last Name</label>
                       <input
                         type="text"
@@ -87,7 +90,7 @@ export default function ContactInfoSection() {
                         ref={lastNameInputRef}
                       />
                     </div>
-                    <div className="email-wrap">
+                    <div className={styles["email-wrap"]}>
                       <label>Email</label>
                       <input
                         type="email"
@@ -97,7 +100,7 @@ export default function ContactInfoSection() {
                         ref={emailInputRef}
                       />
                     </div>
-                    <div className="message-wrap">
+                    <div className={styles["message-wrap"]}>
                       <label>Message</label>
                       <textarea
                         name="message"
@@ -108,18 +111,22 @@ export default function ContactInfoSection() {
                         ref={messageInputRef}
                       ></textarea>
                     </div>
-                    <div className="submit-button-wrap">
+                    <div className={styles["submit-button-wrap"]}>
                       <button type="submit">
                         Submit
                         <span
-                          id="loading-spinner"
-                          className="loading loading-spinner loading-sm inactive"
+                          className={`loading loading-spinner loading-sm ${
+                            !isActive ? styles["inactive"] : ""
+                          }`}
                         ></span>
                       </button>
                     </div>
                   </div>
 
-                  <div className="success-message" ref={successBoxRef}>
+                  <div
+                    className={styles["success-message"]}
+                    ref={successBoxRef}
+                  >
                     <div>
                       <p>Message sent successfully!</p>
                       <button type="button" onClick={closeSuccessMsg}>
@@ -139,7 +146,7 @@ export default function ContactInfoSection() {
                       </button>
                     </div>
                   </div>
-                  <div className="error-message" ref={errorBoxRef}>
+                  <div className={styles["error-message"]} ref={errorBoxRef}>
                     <label htmlFor="first-name">* First Name</label>
                     <label htmlFor="last-name">* Last Name</label>
                     <label htmlFor="email-address">* Email Address</label>
@@ -150,8 +157,8 @@ export default function ContactInfoSection() {
             </div>
           </div>
 
-          <div className="contact-info-wrapper">
-            <div className="inquiries-contact-box">
+          <div className={styles["contact-info-wrapper"]}>
+            <div className={styles["inquiries-contact-box"]}>
               <div>
                 <h3>For inquiries, contact:</h3>
                 <p>
@@ -175,7 +182,7 @@ export default function ContactInfoSection() {
               </div>
             </div>
 
-            <div className="location-contact-box">
+            <div className={styles["location-contact-box"]}>
               <div>
                 <p>
                   <span>Corporate Headquarters</span>
@@ -187,9 +194,9 @@ export default function ContactInfoSection() {
               </div>
             </div>
 
-            <div className="social-contact-box">
+            <div className={styles["social-contact-box"]}>
               <div
-                className="social-link"
+                className={styles["social-link"]}
                 style={{ backgroundColor: "#4867aa" }}
               >
                 <a href="#">
@@ -200,7 +207,7 @@ export default function ContactInfoSection() {
                 </a>
               </div>
               <div
-                className="social-link"
+                className={styles["social-link"]}
                 style={{ backgroundColor: "#179cf0" }}
               >
                 <a href="#">
@@ -211,7 +218,7 @@ export default function ContactInfoSection() {
                 </a>
               </div>
               <div
-                className="social-link"
+                className={styles["social-link"]}
                 style={{ backgroundColor: "#ff0000" }}
               >
                 <a href="#">
@@ -222,7 +229,7 @@ export default function ContactInfoSection() {
                 </a>
               </div>
               <div
-                className="social-link"
+                className={styles["social-link"]}
                 style={{ backgroundColor: "#0a66c2" }}
               >
                 <a href="#">
@@ -233,7 +240,7 @@ export default function ContactInfoSection() {
                 </a>
               </div>
               <div
-                className="social-link"
+                className={styles["social-link"]}
                 style={{ backgroundColor: "#262626" }}
               >
                 <a href="#">
@@ -244,7 +251,7 @@ export default function ContactInfoSection() {
                 </a>
               </div>
               <div
-                className="social-link"
+                className={styles["social-link"]}
                 style={{ backgroundColor: "#00b1f0" }}
               >
                 <a href="#">

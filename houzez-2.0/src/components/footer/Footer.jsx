@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import scrollToTop from "../../components/utils/scrollToTop";
 import checkEmailValidity from "../utils/checkEmailValidity";
-import "../../styles/Footer.css";
+import styles from "../../styles/footer/Footer.module.css";
 
 export default function Footer() {
   const emailInputRef = useRef();
@@ -12,11 +12,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-container">
-          <div className="footer-top-inner">
-            <div className="about">
+    <footer className={styles["footer"]}>
+      <div className={styles["footer-top"]}>
+        <div className={styles["footer-container"]}>
+          <div className={styles["footer-top-inner"]}>
+            <div className={styles["about"]}>
               <h3>About Site</h3>
               <p>
                 Houzez is a premium WordPress theme for real estate where modern
@@ -28,14 +28,14 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            <div className="contact">
+            <div className={styles["contact"]}>
               <h3>Contact Us</h3>
               <ul>
-                <li className="contact-address">
+                <li className={styles["contact-address"]}>
                   774 NE 84th St Miami, FL 33879
                 </li>
-                <li className="contact-phone">+1 (800) 990 8877</li>
-                <li className="contact-email">email@email.com</li>
+                <li className={styles["contact-phone"]}>+1 (800) 990 8877</li>
+                <li className={styles["contact-email"]}>email@email.com</li>
               </ul>
               <div>
                 <Link to={"/contact-us"} onClick={scrollToTop}>
@@ -43,13 +43,13 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            <div className="newsletter">
+            <div className={styles["newsletter"]}>
               <h3>Newsletter</h3>
               <div>
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    checkEmailValidity(emailInputRef, submitForm);
+                    checkEmailValidity(emailInputRef, styles, submitForm);
                   }}
                 >
                   <input
@@ -72,19 +72,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="footer-bottom">
-        <div className="footer-container">
-          <div className="footer-bottom-inner">
-            <div className="footer-copyright">
+      <div className={styles["footer-bottom"]}>
+        <div className={styles["footer-container"]}>
+          <div className={styles["footer-bottom-inner"]}>
+            <div className={styles["footer-copyright"]}>
               © Houzez - All rights reserved
             </div>
-            <div className="footer-nav">
+            <div className={styles["footer-nav"]}>
               <a href="#">Privacy</a>
               <a href="#">Terms and Conditions</a>
               <a href="#">Contact</a>
             </div>
-            <div className="footer-social">
-              <a href="#" className="fb-btn">
+            <div className={styles["footer-social"]}>
+              <a href="#" className={styles["fb-btn"]}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16px"
@@ -101,7 +101,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="X-btn">
+              <a href="#" className={styles["X-btn"]}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -120,7 +120,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="G-plus-btn">
+              <a href="#" className={styles["G-plus-btn"]}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -144,7 +144,7 @@ export default function Footer() {
                   </g>
                 </svg>
               </a>
-              <a href="#" className="linkedIn-btn">
+              <a href="#" className={styles["linkedIn-btn"]}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16px"
@@ -172,7 +172,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="ig-btn">
+              <a href="#" className={styles["ig-btn"]}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#fff"

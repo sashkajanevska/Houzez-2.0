@@ -1,56 +1,63 @@
 import { useRef, useState } from "react";
 import checkEmailValidity from "../utils/checkEmailValidity";
 import checkPasswordValidity from "../utils/checkPasswordValidity";
+import styles from "../../styles/header/LoginModal.module.css";
 
-export default function LoginModal() {
+export default function LoginModal({
+  isLoginModalActive,
+  setIsLoginModalActive,
+  isResetModalActive,
+  setIsResetModalActive,
+}) {
+  const [isInactive, setIsInactive] = useState(true);
+  const [inputType, setInputType] = useState("text");
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const checkboxInputRef = useRef();
-  const [inputType, setInputType] = useState("text");
 
   const closeLoginOverlay = () => {
-    document.getElementById("login").classList.remove("active");
-    document.getElementById("loginOverlay").classList.remove("active");
+    setIsLoginModalActive(!isLoginModalActive);
+
     setTimeout(() => {
       emailInputRef.current.value = "";
       passwordInputRef.current.value = "";
       checkboxInputRef.current.checked = false;
-      document.querySelector(".login-button span").classList.add("inactive");
+      setIsInactive(true);
     }, 300);
   };
 
-  const openResetOverlay = () => {
-    closeLoginOverlay();
-    document.getElementById("resetOverlay").classList.add("active");
-    setTimeout(() => {
-      document.getElementById("reset").classList.add("active");
-    }, 50);
-  };
-
   const loading = () => {
-    document.querySelector(".login-button span").classList.remove("inactive");
+    setIsInactive(!isInactive);
     setTimeout(() => {
       closeLoginOverlay();
     }, 1500);
   };
 
+  const openResetOverlay = () => {
+    closeLoginOverlay();
+    setIsResetModalActive(!isResetModalActive);
+  };
+
   return (
     <div
-      id="loginOverlay"
-      className="modal-overlay"
+      className={`${styles["modal-overlay"]} ${
+        isLoginModalActive ? styles["active"] : ""
+      }`}
       onClick={closeLoginOverlay}
     >
       <div
-        id="login"
-        className="login-modal"
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
+        className={`${styles["login-modal"]} ${
+          isLoginModalActive ? styles["active"] : ""
+        }`}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="login-modal-inner">
-          <div className="login-header">
+        <div className={styles["login-modal-inner"]}>
+          <div className={styles["login-header"]}>
             <p>Login</p>
-            <button className="close-button" onClick={closeLoginOverlay}>
+            <button
+              className={styles["close-button"]}
+              onClick={closeLoginOverlay}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -67,13 +74,13 @@ export default function LoginModal() {
             </button>
           </div>
 
-          <div className="login-main">
+          <div className={styles["login-main"]}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
 
                 if (inputType === "email") {
-                  checkEmailValidity(emailInputRef);
+                  checkEmailValidity(emailInputRef, styles);
                 }
                 checkPasswordValidity(passwordInputRef);
 
@@ -85,7 +92,7 @@ export default function LoginModal() {
                 }
               }}
             >
-              <div className="email">
+              <div className={styles["email"]}>
                 <input
                   type={inputType}
                   placeholder="Username or Email"
@@ -99,7 +106,7 @@ export default function LoginModal() {
                   }}
                 />
               </div>
-              <div className="password">
+              <div className={styles["password"]}>
                 <input
                   type="password"
                   placeholder="Password"
@@ -111,8 +118,8 @@ export default function LoginModal() {
                 />
               </div>
 
-              <div className="login-tools">
-                <div className="save-button">
+              <div className={styles["login-tools"]}>
+                <div className={styles["save-button"]}>
                   <input id="saveUser" type="checkbox" ref={checkboxInputRef} />
                   <label htmlFor="saveUser">Remember me</label>
                 </div>
@@ -121,9 +128,13 @@ export default function LoginModal() {
                 </button>
               </div>
 
-              <button type="submit" className="login-button">
+              <button type="submit" className={styles["login-button"]}>
                 Login
-                <span className="loading loading-spinner loading-sm inactive"></span>
+                <span
+                  className={`loading loading-spinner loading-sm ${
+                    isInactive ? styles["inactive"] : ""
+                  }`}
+                ></span>
               </button>
             </form>
           </div>

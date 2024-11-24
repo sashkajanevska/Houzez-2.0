@@ -1,0 +1,50 @@
+{
+    "team": {
+        "teamMembers": [
+            {
+                "imgUrl": "../../images/about/team-member-01.jpg",
+                "name": "Kathleen Grant",
+                "role": "Funder"
+            },
+            {
+                "imgUrl": "../../images/about/team-member-02.jpg",
+                "name": "Keith Bailey",
+                "role": "CEO"
+            },
+            {
+                "imgUrl": "../../images/about/team-member-03.jpg",
+                "name": "Danielle Murray",
+                "role": "Manager"
+            },
+            {
+                "imgUrl": "../../images/about/team-member-04.jpg",
+                "name": "Thomas Stevens",
+                "role": "Manager"
+            }
+        ]
+    },
+    "blog": {
+        "blogPosts": [
+            {
+                "imgUrl": "../../images/about/card-01.jpg",
+                "theme": "Business",
+                "title": "Skills That You Can Learn In The Real Estate Market"
+            },
+            {
+                "imgUrl": "../../images/about/card-02.jpg",
+                "theme": "Construction",
+                "title": "Learn The Truth About Real Estate Industry"
+            },
+            {
+                "imgUrl": "../../images/about/card-03.jpg",
+                "theme": "Real Estate",
+                "title": "10 Quick Tips About Business Development"
+            },
+            {
+                "imgUrl": "../../images/about/card-04.jpg",
+                "theme": "Real Estate",
+                "title": "14 Common Misconceptions About Business Development"
+            }
+        ]
+    }
+}
