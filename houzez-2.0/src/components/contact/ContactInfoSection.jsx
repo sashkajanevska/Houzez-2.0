@@ -53,15 +53,13 @@ export default function ContactInfoSection() {
                   noValidate={true}
                   onSubmit={(e) => {
                     e.preventDefault();
-                    checkFormValidity(
+                    checkFormValidity({
                       nameInputRef,
                       emailInputRef,
-                      null,
-                      null,
                       lastNameInputRef,
                       messageInputRef,
-                      styles
-                    );
+                      styles,
+                    });
 
                     const errorBox = errorBoxRef.current;
                     if (!errorBox.querySelector(`.${styles.active}`)) {

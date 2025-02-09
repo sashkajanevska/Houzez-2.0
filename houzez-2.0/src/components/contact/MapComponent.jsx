@@ -15,11 +15,22 @@ export default function MapComponent({ styles }) {
   const [googleMapsDirectionsLink, setGoogleMapsDirectionsLink] = useState("");
 
   const fetchLocationData = async (lat, lng) => {
-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${googleMapsApiKey}`;
-    const response = await fetch(geocodeUrl);
-    const data = await response.json();
+    try {
+      const response = await fetch(
+        `/netlify/functions/geocode?lat=${lat}&lng=${lng}`
+      );
 
-    if (data.results && data.results.length > 0) {
+      if (!response.ok) {
+        throw new Error("Failed to fetch geocode data");
+      }
+
+      const data = await response.json();
+
+      if (!data || !data.results || data.results.length === 0) {
+        console.error("No results found for the given coordinates.");
+        return;
+      }
+
       const result = data.results[0];
       const fetchedAddress = result.formatted_address;
       const index = result.formatted_address.indexOf(",");
@@ -31,8 +42,8 @@ export default function MapComponent({ styles }) {
       setGoogleMapsDirectionsLink(
         `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`
       );
-    } else {
-      console.error("No results found in the geocode response");
+    } catch (error) {
+      console.error("Error fetching geocode data:", error);
     }
   };
 

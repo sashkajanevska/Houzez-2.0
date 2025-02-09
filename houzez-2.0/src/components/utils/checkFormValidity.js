@@ -36,15 +36,15 @@ const checkTextInputValidity = (element, styles) => {
   }
 };
 
-export default function formValidation(
+export default function checkFormValidity({
   nameInputRef,
   emailInputRef,
-  selectElements,
-  numInputElements,
   lastNameInputRef,
   messageInputRef,
-  styles
-) {
+  selectElements,
+  numInputElements,
+  styles,
+}) {
   checkTextInputValidity(nameInputRef, styles);
   nameInputRef.current.addEventListener("keyup", () => {
     checkTextInputValidity(nameInputRef, styles);

@@ -8,9 +8,9 @@ The most flexible WordPress theme for real estate. Crafted for versatility. Houz
 
 ### Active Pages
 
--  **Home**
--  **About us**
--  **Contact us**
+- **Home**
+- **About us**
+- **Contact us**
 
 ## ⚙️ Built With
 
@@ -27,6 +27,8 @@ The most flexible WordPress theme for real estate. Crafted for versatility. Houz
 
 - **React:**
   JavaScript library for building user interfaces.
+- **Tailwind CSS:**
+  A CSS library for quickly building custom designs using utility classes.
 - **DaisyUI:**
   Component library based on Tailwind CSS for pre-designed UI elements.
 - **Swiper:**
@@ -54,20 +56,21 @@ https://fabulous-sprinkles-90fa21.netlify.app/
 
 ## 👉 Getting Started
 
-&nbsp;&nbsp; **1.** **Clone the repository** --> (git clone /repositoryURL/)
+**1.** **Clone the repository** --> (git clone /repositoryURL/)
 
-&nbsp;&nbsp; **2.** **Navigate to the project directory** --> (cd houzez-2.0)
+**2.** **Navigate to the project directory** --> (cd houzez-2.0)
 
-&nbsp;&nbsp; **3.** **Install dependencies** --> (npm install)
+**3.** **Install dependencies** --> (npm install)
 
-&nbsp;&nbsp; **4.** **Set up environment variables** --> (
-- Create .env file in the root directory and add VITE_GOOGLE_MAPS_API_KEY variable. 
-- Generate Google Maps API Key by following the instructions in this [link](https://developers.google.com/maps/documentation/javascript/get-api-key). 
+**4.** **Set up environment variables** --> (
+
+- Create .env file in the root directory and add VITE_GOOGLE_MAPS_API_KEY variable.
+- Generate Google Maps API Key by following the instructions in this [link](https://developers.google.com/maps/documentation/javascript/get-api-key).
 - Copy the Google Maps API Key and use it as value for VITE_GOOGLE_MAPS_API_KEY variable.)
 
-&nbsp;&nbsp; **5.** **Start the development server** --> (npm run dev)
+**5.** **Start the development server** --> (npm run dev)
 
-&nbsp;&nbsp; **6.** **Visit the link in your terminal** --> (CTRL + Click on http://localhost:5173)
+**6.** **Visit the link in your terminal** --> (CTRL + Click on http://localhost:5173)
 
 ## Author
 

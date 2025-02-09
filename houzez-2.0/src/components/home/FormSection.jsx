@@ -20,7 +20,7 @@ export default function FormSection() {
   const successBoxRef = useRef();
 
   const selectElements = [inquiryTypeRef, userTypeRef, propertyTypeRef];
-  const inputNumElements = [
+  const numInputElements = [
     priceInputRef,
     areaInputRef,
     bedsNumInputRef,
@@ -40,7 +40,7 @@ export default function FormSection() {
         element.current.value = "";
       });
 
-      inputNumElements.forEach((element) => {
+      numInputElements.forEach((element) => {
         element.current.value = "";
       });
 
@@ -91,15 +91,13 @@ export default function FormSection() {
                 noValidate={true}
                 onSubmit={(e) => {
                   e.preventDefault();
-                  checkFormValidity(
+                  checkFormValidity({
                     nameInputRef,
                     emailInputRef,
                     selectElements,
-                    inputNumElements,
-                    null,
-                    null,
-                    styles
-                  );
+                    numInputElements,
+                    styles,
+                  });
 
                   const errorBox = errorBoxRef.current;
                   if (!errorBox.querySelector(`.${styles.active}`)) {
