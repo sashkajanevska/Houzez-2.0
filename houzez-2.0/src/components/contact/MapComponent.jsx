@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 
 const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+const geocodingApiKey = import.meta.env.VITE_GEOCODING_API_KEY;
 const defaultLocation = {
   lat: 25.790345,
   lng: -80.189221,
@@ -16,9 +17,8 @@ export default function MapComponent({ styles }) {
 
   const fetchLocationData = async (lat, lng) => {
     try {
-      const response = await fetch(
-        `/netlify/functions/geocode/json?lat=${lat}&lng=${lng}`
-      );
+      const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${geocodingApiKey}`;
+      const response = await fetch(geocodeUrl);
 
       if (!response.ok) {
         throw new Error("Failed to fetch geocode data");
