@@ -60,6 +60,7 @@ https://fabulous-sprinkles-90fa21.netlify.app/
 
 **2.** **Navigate to the project directory** --> (cd houzez-2.0)
 
+<<<<<<< HEAD
 **3.** **Install dependencies** --> (npm install)
 
 **4.** **Set up environment variables** --> (
