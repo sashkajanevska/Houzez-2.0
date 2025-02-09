@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
-  const geocodingApiKey = import.meta.env.VITE_GEOCODING_API_KEY;
+  const geocodingApiKey = process.env.VITE_GEOCODING_API_KEY;
   const { lat, lng } = event.queryStringParameters;
 
   if (!lat || !lng) {
