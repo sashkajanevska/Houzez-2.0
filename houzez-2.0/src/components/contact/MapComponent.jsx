@@ -17,7 +17,7 @@ export default function MapComponent({ styles }) {
   const fetchLocationData = async (lat, lng) => {
     try {
       const response = await fetch(
-        `/netlify/functions/geocode?lat=${lat}&lng=${lng}`
+        `/netlify/functions/geocode/json?lat=${lat}&lng=${lng}`
       );
 
       if (!response.ok) {
