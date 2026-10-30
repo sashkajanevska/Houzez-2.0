@@ -19,7 +19,7 @@
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.10",
@@ -31,6 +31,6 @@
     "postcss": "^8.4.45",
     "swiper": "^11.1.14",
     "tailwindcss": "^3.4.10",
-    "vite": "^5.4.1"
+    "vite": "^8.3.5"
   }
 }
