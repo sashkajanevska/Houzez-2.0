@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import HomeMenu from "./HomeMenu";
 import ListingMenu from "./ListingMenu";
 import PropertyMenu from "./PropertyMenu";

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import Footer from "../components/footer/Footer";
 import useWindowScroll from "../hooks/useWindowScroll";
 

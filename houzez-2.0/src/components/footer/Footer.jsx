@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import scrollToTop from "../../components/utils/scrollToTop";
 import checkEmailValidity from "../utils/checkEmailValidity";
 import styles from "../../styles/footer/Footer.module.css";
