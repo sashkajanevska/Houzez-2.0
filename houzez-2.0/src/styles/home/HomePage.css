@@ -51,21 +51,23 @@ body {
   border-radius: 3px;
   background-color: transparent;
   color: #00aeff;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .swiper-button-prev {
   position: absolute;
-  top: 32px;
-  right: 63px;
-  left: auto;
+  top: 32px !important;
+  right: 63px !important;
+  left: auto !important;
 }
 
 .swiper-button-next {
   position: absolute;
-  top: 32px;
-  right: 10px;
-  left: auto;
+  top: 32px !important;
+  right: 10px !important;
+  left: auto !important;
 }
 
 .swiper-button-prev::after,
